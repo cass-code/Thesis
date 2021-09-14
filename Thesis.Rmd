@@ -131,7 +131,18 @@ To reference a section, you have to set a label using ``\\label'' in R, and then
 
 Writing in Rmarkdown is surprizingly easy - see [this website](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) cheatsheet for a summary on writing Rmd writing tips.
 
-# Data  {-}
+# Data  
+
+Data cleaning
+
+```{r, echo=FALSE, include=FALSE, results='hide', eval=TRUE}
+source("code/sheets_df.R")
+excel_1<- "C:/Users/Cassandra/OneDrive/Documents/2021 Academics/Thesis/Thesis/data/Copy of Item Sales, Pricing - Anelisa worked.xlsx"
+excel_2 <- 
+sheets_df(excel_1)
+sheets_df(excel_2)
+```
+
 
 Notice how I used the curly brackets and dash to remove the numbering of the data section.
 
