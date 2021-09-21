@@ -14,20 +14,23 @@ The purpose of this document is to track the process of writing and coding for t
 * All functions are stored in the 'code' folder
 * All text files are stored in the 'Tex' folder 
 
-
 ### Step 1: Data cleaning
 Create a function to read in multiple excel sheets
 
 ```{r, echo=FALSE, include=FALSE, results='hide', eval=FALSE}
+library("readxl")
 source("code/sheets_df.R")
 excel_1<- "C:/Users/Cassandra/OneDrive/Documents/2021 Academics/Thesis/Thesis/data/Copy of Item Sales, Pricing - Anelisa worked.xlsx"
 sheets_df(excel_1)
+filePath <- as.character("C:/Users/Cassandra/OneDrive/Documents/2021 Academics/Thesis/Thesis/data/Data.xlsx")
+data <- read_excel(filePath)
+
 ```
 
 
 ```{r}
 # xl_data <- "C:/Users/Cassandra/OneDrive/Documents/2021 Academics/Thesis/Thesis/data/Copy of Item Sales, Pricing - Anelisa worked.xlsx"
-# excel_sheets(path=xl_data) #list the sheets in the excel data
+excel_sheets(path=excel_2) #list the sheets in the excel data
 # tab_names<- excel_sheets(path=xl_data) # assigning the sheet names to tab_names
 # list_all<- lapply(tab_names, function(x) read_excel(path=xl_data, sheet = x))
 # # str(list_all)

@@ -3,45 +3,45 @@
 # Remove comments and add values where applicable.
 # The descriptions below should be self-explanatory
 
-title: "Helping You Write Academic Papers in R using Texevier"
+#title: "Modelling Tobacco Demand: How the Illicit Cigarette Market Constrains the Legal Market" 
 #subtitle: "This will appear as Right Header"
 
 documentclass: "elsarticle"
 
 # --------- Thesis title (Optional - set to FALSE by default).
 # You can move the details below around as you please.
-Thesis_FP: FALSE
-# Entry1: "An unbelievable study with a title spanning multiple lines."
-# Entry2: "\\textbf{Nico Katzke}" # textbf for bold
-# Entry3: "A thesis submitted toward the degree of Doctor of Philosophy"
-# Uni_Logo: Tex/Logo.png # Place a logo in the indicated location (from your root, e.g. defaults to ~/Tex/Logo.png) and uncomment this line. Leave uncommented for no image
-# Logo_width: 0.3 # If using a logo - use this to set width (size) of image
-# Entry4: "Under the supervision of: \\vfill Prof. Joe Smith and Dr. Frank Smith"
-# Entry5: "Stellenbosch University"
-# Entry6: April 2020
-# Entry7:
+Thesis_FP: TRUE
+Entry1: "Modelling Tobacco Demand: How the Illicit Cigarette Market Constrains the Legal Market"
+Entry2: "\\textbf{Cassandra Pengelly} \\vfill Thesis Draft 1" # textbf for bold
+#Entry3: "Thesis draft 1"
+Uni_Logo: Tex/logo.png # Place a logo in the indicated location (from your root, e.g. defaults to ~/Tex/Logo.png) and uncomment this line. Leave uncommented for no image
+Logo_width: 0.3 # If using a logo - use this to set width (size) of image
+# Entry3: "Under the supervision of: \\vfill Prof. W. Boshoff"
+# Entry4: "Stellenbosch University \\vfill September 2021"
+#Entry6: September 2021
+#Entry7: 
 # Entry8:
 
 # --------- Front Page
 # Comment: ----- Follow this pattern for up to 5 authors
-AddTitle: TRUE # Use FALSE when submitting to peer reviewed platform. This will remove author names.
-Author1: "Nico Katzke^[__Contributions:__  \\newline _The authors would like to thank no institution for money donated to this project. Thank you sincerely._]"  # First Author - note the thanks message displayed as an italic footnote of first page.
-Ref1: "Prescient Securities, Cape Town, South Africa" # First Author's Affiliation
-Email1: "nfkatzke\\@gmail.com" # First Author's Email address
-
-Author2: "John Smith"
-Ref2: "Some other Institution, Cape Town, South Africa"
-Email2: "John\\@gmail.com"
-CommonAffiliation_12: TRUE # If Author 1 and 2 have a common affiliation. Works with _13, _23, etc.
-
-Author3: "John Doe"
-Email3: "Joe\\@gmail.com"
-
-CorrespAuthor_1: TRUE  # If corresponding author is author 3, e.g., use CorrespAuthor_3: TRUE
+# AddTitle: TRUE # Use FALSE when submitting to peer reviewed platform. This will remove author names.
+# Author1: "Nico Katzke^[__Contributions:__  \\newline _The authors would like to thank no institution for money donated to this project. Thank you sincerely._]"  # First Author - note the thanks message displayed as an italic footnote of first page.
+# Ref1: "Prescient Securities, Cape Town, South Africa" # First Author's Affiliation
+# Email1: "nfkatzke\\@gmail.com" # First Author's Email address
+# 
+# Author2: "John Smith"
+# Ref2: "Some other Institution, Cape Town, South Africa"
+# Email2: "John\\@gmail.com"
+# CommonAffiliation_12: TRUE # If Author 1 and 2 have a common affiliation. Works with _13, _23, etc.
+# 
+# Author3: "John Doe"
+# Email3: "Joe\\@gmail.com"
+# 
+# CorrespAuthor_1: TRUE  # If corresponding author is author 3, e.g., use CorrespAuthor_3: TRUE
 
 # Comment out below to remove both. JEL Codes only given if keywords also given.
-keywords: "Multivariate GARCH \\sep Kalman Filter \\sep Copula" # Use \\sep to separate
-JELCodes: "L250 \\sep L100"
+keywords: "Price elasticity \\sep Tobacco control \\sep Cigarettes \\sep Illicit cigarettes \\sep Excise duties" # Use \\sep to separate 
+JELCodes: "D12 \\sep H21 \\sep I18 \\sep C40" 
 
 # ----- Manage headers and footers:
 #BottomLFooter: $Title$
@@ -54,7 +54,7 @@ addfootrule: TRUE               # Use if footers added. Add '#' to remove line.
 # --------- page margins:
 margin: 2.3 # Sides
 bottom: 2 # bottom
-top: 2.5 # Top
+top: 2.3 # Top
 HardSet_layout: TRUE # Hard-set the spacing of words in your document. This will stop LaTeX squashing text to fit on pages, e.g.
 # This is done by hard-setting the spacing dimensions. Set to FALSE if you want LaTeX to optimize this for your paper.
 
@@ -75,7 +75,7 @@ csl: Tex/harvard-stellenbosch-university.csl # referencing format used.
 # ---------- General:
 RemovePreprintSubmittedTo: TRUE  # Removes the 'preprint submitted to...' at bottom of titlepage
 Journal: "Journal of Finance"   # Journal that the paper will be submitting to, if RemovePreprintSubmittedTo is set to TRUE.
-toc: FALSE                       # Add a table of contents
+toc: TRUE                       # Add a table of contents
 numbersections: TRUE             # Should sections (and thus figures and tables) be numbered?
 fontsize: 11pt                  # Set fontsize
 linestretch: 1.2                # Set distance between lines.
@@ -110,9 +110,8 @@ if(!require("tidyverse")) install.packages("tidyverse")
 library(tidyverse)
 Example_data <- Texevier::Ex_Dat
 
-# Notice that as you are working in a .Rproj file (I am assuming you are) - the relative paths of your directories start at your specified root.
-# This means that when working in a .Rproj file, you never need to use getwd() - it is assumed as your base root automatically.
 write_rds(Example_data, path = "data/Example_data.rds")
+#list.files('code/', full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
 
 ```
 
@@ -127,51 +126,38 @@ References are to be made as follows: @fama1997[p. 33] and @grinold2000 Such aut
 
 > I suggest renaming the top line after \@article, as done in the template ref.bib file, to something more intuitive for you to remember. Do not change the rest of the code. Also, be mindful of the fact that bib references from google scholar may at times be incorrect. Reference Latex forums for correct bibtex notation.
 
-To reference a section, you have to set a label using ``\\label'' in R, and then reference it in-text as e.g. referencing a later section, Section \ref{Meth}.
 
-Writing in Rmarkdown is surprizingly easy - see [this website](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) cheatsheet for a summary on writing Rmd writing tips.
+Section \ref{data} describes the data used. Section \ref{method} explains the vecto autoregression method used.
 
-# Data  
+
+# Data  \label{data}
 
 Data cleaning
 
 ```{r, echo=FALSE, include=FALSE, results='hide', eval=TRUE}
-source("code/sheets_df.R")
-excel_1<- "C:/Users/Cassandra/OneDrive/Documents/2021 Academics/Thesis/Thesis/data/Copy of Item Sales, Pricing - Anelisa worked.xlsx"
-excel_2 <- 
-sheets_df(excel_1)
-sheets_df(excel_2)
+#list.files('code/', full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
+
+# read in the data - add the dataset's path to filePath
+library(readxl)
+filePath <- as.character("C:/Users/Cassandra/OneDrive/Documents/2021 Academics/Thesis/Thesis/data/Data.xlsx")
+data <- read_excel(filePath)
+source("code/data_clean.R")
+log_data <- data_clean(data)
 ```
 
-
-Notice how I used the curly brackets and dash to remove the numbering of the data section.
 
 Discussion of data should be thorough with a table of statistics and ideally a figure.
 
-In your tempalte folder, you will find a Data and a Code folder. In order to keep your data files neat, store all of them in your Data folder. Also, I strongly suggest keeping this Rmd file for writing and executing commands, not writing out long pieces of data-wrangling. In the example below, I simply create a ggplot template for scatter plot consistency. I suggest keeping all your data in a data folder.
 
-<!-- The following is a code chunk. It must have its own unique name (after the r), or no name. After the comma follows commands for R which are self-explanatory. By default, the code and messages will not be printed in your pdf, just the output: -->
+The plots below (\ref{Figure1}) graph the time series for cigarette quantity, legal and illicit real prices and income. All the variables have been logged; and the x-axis shows the year.
 
-```{r Figure1,  warning =  FALSE, fig.align = 'center', fig.cap = "Caption Here \\label{Figure1}", fig.ext = 'png', fig.height = 3, fig.width = 6}
+```{r Figure1, echo=FALSE, warning =  FALSE, fig.align = 'center', fig.cap = "Time Series Plot \\label{Figure1}", fig.ext = 'png', fig.height = 5, fig.width = 6}
 
-  # This is just a random plot to show you a plot. This is done if the getwd() does not point to your Template's directory.
-  # Set WD below to your project's working directory.
-
-  g <-
-  ggplot(data = mtcars) +
-  geom_point(aes(x = disp, y = hp, color = cyl)) +
-  theme_bw() +
-  # theme(legend.position = "none") +
-  theme(plot.title = element_text(size = 10)) +
-  theme(axis.title = element_text(size = 10),
-        axis.title.x = element_text()) +
-  labs(y = "y-axis", x = "x-axis", title = "Some amazing plot")
-
-g
+source("code/ts_plot.R")
+Plot <- ts_plot(log_data)
 
 ```
 
-To make your graphs look extra nice in latex world, you could use Tikz device. Replace dev - 'png' with 'tikz' in the chunk below. Notice this makes the build time longer and produces extra tex files - so if you are comfortable with this, set your device to Tikz and try it out:
 
 ```{r Figure2, warning =  FALSE, fig.align = 'center', fig.cap = "Caption Here \\label{Figure2}", fig.height = 3, fig.width = 6, dev = 'png'}
 
@@ -203,41 +189,7 @@ g
 
 To reference the plot above, add a ``\\label'' after the caption in the chunk heading, as done above. Then reference the plot as such: As can be seen, Figures \ref{Figure1}  and \ref{Figure2} are excellent, with Figure \ref{Figure2} being particularly aesthetically pleasing due to its device setting of Tikz. The nice thing now is that it correctly numbers all your figures (and sections or tables) and will update if it moves. The links are also dynamic.
 
-I very strongly suggest using ggplot2 (ideally in combination with dplyr) using the ggtheme package to change the themes of your figures.
-
-Also note the information that I have placed above the chunks in the code chunks for the figures. You can edit any of these easily - visit the Rmarkdown webpage for more information.
-
-# Splitting a page
-
-You can also very easily split a page using built-in Pandoc formatting. I comment this out in the code (as this has caused issues building the pdf for some users - which I presume to be a Pandoc issue), but you are welcome to try it out yourself by commenting out the following section in your Rmd file.
-
-
-<!-- :::::: {.columns data-latex="[T]"} -->
-<!-- ::: {.column data-latex="{0.7\textwidth}"} -->
-<!-- ```{r, echo=FALSE, fig.width=4, fig.height=4} -->
-<!-- par(mar = c(4, 4, .2, .1)) -->
-<!-- plot(cars, pch = 19) -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ::: {.column data-latex="{0.05\textwidth}"} -->
-<!-- \ -->
-<!-- ::: -->
-<!-- ::: {.column data-latex="{0.2\textwidth}"} -->
-<!-- \scriptsize -->
-
-<!-- ## Data {-} -->
-<!-- The figure on the left-hand side shows the `cars` data. -->
-
-<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do -->
-<!-- eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut -->
-<!-- enim ad minim veniam, quis nostrud exercitation ullamco laboris -->
-<!-- nisi ut aliquip ex ea commodo consequat. -->
-<!-- ::: -->
-<!-- :::::: -->
-
-
-
-#  Methodology \label{Meth}
+#  Methodology \label{method}
 
 ## Subsection
 Ideally do not overuse subsections. It equates to bad writing.^[This is an example of a footnote by the way. Something that should also not be overused.]
@@ -353,10 +305,6 @@ This cost some adjustment to the Tex templates to make it work, but it now works
 See documentation for this package [here](https://hughjonesd.github.io/huxtable/huxtable.html). A particularly nice addition of this package is for making the printing of regression results a joy (see [here](https://hughjonesd.github.io/huxtable/huxtable.html#creating-a-regression-table)). Here follows an example:
 
 
-If you are eager to use huxtable, comment out the Huxtable table in the Rmd template, and uncomment the colortbl package in your Rmd's root.
-
-Note that I do not include this in the ordinary template, as some latex users have complained it breaks when they build their Rmds (especially those using tidytex - I don't have this problem as I have the full Miktex installed on mine). Up to you, but I strongly recommend installing the package manually and using huxtable. To make this work, uncomment the _Adding additional latex packages_ part in yaml at the top of the Rmd file. Then comment out the huxtable example in the template below this line. Reknit, and enjoy.
-
 ```{r, results = 'asis'}
 
 if(!require(huxtable)) install.packages(huxtable)
@@ -385,7 +333,6 @@ htab
 
 ```
 
-FYI - R also recently introduced the gt package, which is worthwhile exploring too.
 
 # Lists
 
@@ -399,7 +346,6 @@ To add lists, simply using the following notation
 
 # Conclusion
 
-I hope you find this template useful. Remember, stackoverflow is your friend - use it to find answers to questions. Feel free to write me a mail if you have any questions regarding the use of this package. To cite this package, simply type citation("Texevier") in Rstudio to get the citation for @Texevier (Note that uncited references in your bibtex file will not be included in References).
 
 <!-- Make title of bibliography here: -->
 <!-- \newpage -->
