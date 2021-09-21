@@ -186,6 +186,14 @@ g
 # When you start working, delete these meaningless functions and replace with your own...
 
 ```
+Figure \ref{ACF} shows the autocorrelation functions for each of the variables. The persistence is quite high for all of the 4 variables.
+
+```{r Figure3, echo = FALSE, warning =  FALSE, fig.align = 'center', fig.cap = "Autocorrelation Function Plots \\label{ACF}", fig.height = 5, fig.width = 6, dev = 'png'}
+
+source("code/ACF.R") 
+Plot_acf <- ACF(log_data)
+
+```
 
 To reference the plot above, add a ``\\label'' after the caption in the chunk heading, as done above. Then reference the plot as such: As can be seen, Figures \ref{Figure1}  and \ref{Figure2} are excellent, with Figure \ref{Figure2} being particularly aesthetically pleasing due to its device setting of Tikz. The nice thing now is that it correctly numbers all your figures (and sections or tables) and will update if it moves. The links are also dynamic.
 
@@ -226,13 +234,6 @@ Note that in \ref{eq2} I have aligned the equations by the equal signs. I also w
 
 See if you can figure out how to do complex math using the two examples provided in \ref{eq1} and \ref{eq2}.
 
-<!-- $$ -->
-<!-- This is a commented out section in the writing part. -->
-<!-- Comments are created by highlighting text, amnd pressing CTL+C -->
-<!-- \\begin{align} -->
-<!-- \\beta = \\alpha^2 -->
-<!-- \end{align} -->
-<!-- $$ -->
 
 # Results
 

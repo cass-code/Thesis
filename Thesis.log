@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.21)  21 SEP 2021 14:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.21)  21 SEP 2021 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -761,6 +761,18 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 
 LaTeX Warning: Label `data' multiply defined.
 
+
+LaTeX Warning: Label `ACF' multiply defined.
+
+
+LaTeX Warning: Label `ACF' multiply defined.
+
+
+LaTeX Warning: Label `ACF' multiply defined.
+
+
+LaTeX Warning: Label `ACF' multiply defined.
+
 )
 \openout1 = `Thesis.aux'.
 
@@ -923,34 +935,69 @@ Package pdftex.def Info: Thesis_files/figure-latex/Figure2-1.png  used on input
  line 340.
 (pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
 [4 <./Thesis_files/figure-latex/Figure1-1.png>]
+<Thesis_files/figure-latex/Figure3-1.png, id=120, 433.62pt x 361.35pt>
+File: Thesis_files/figure-latex/Figure3-1.png Graphic file (type png)
+<use Thesis_files/figure-latex/Figure3-1.png>
+Package pdftex.def Info: Thesis_files/figure-latex/Figure3-1.png  used on input
+ line 352.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+<Thesis_files/figure-latex/Figure3-2.png, id=121, 433.62pt x 361.35pt>
+File: Thesis_files/figure-latex/Figure3-2.png Graphic file (type png)
+<use Thesis_files/figure-latex/Figure3-2.png>
+Package pdftex.def Info: Thesis_files/figure-latex/Figure3-2.png  used on input
+ line 360.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+[5 <./Thesis_files/figure-latex/Figure2-1.png>]
+<Thesis_files/figure-latex/Figure3-3.png, id=129, 433.62pt x 361.35pt>
+File: Thesis_files/figure-latex/Figure3-3.png Graphic file (type png)
+<use Thesis_files/figure-latex/Figure3-3.png>
+Package pdftex.def Info: Thesis_files/figure-latex/Figure3-3.png  used on input
+ line 368.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+[6 <./Thesis_files/figure-latex/Figure3-1.png>]
+<Thesis_files/figure-latex/Figure3-4.png, id=136, 433.62pt x 361.35pt>
+File: Thesis_files/figure-latex/Figure3-4.png Graphic file (type png)
+<use Thesis_files/figure-latex/Figure3-4.png>
+Package pdftex.def Info: Thesis_files/figure-latex/Figure3-4.png  used on input
+ line 376.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+[7 <./Thesis_files/figure-latex/Figure3-2.png>]
+<Thesis_files/figure-latex/Figure3-5.png, id=144, 433.62pt x 361.35pt>
+File: Thesis_files/figure-latex/Figure3-5.png Graphic file (type png)
+<use Thesis_files/figure-latex/Figure3-5.png>
+Package pdftex.def Info: Thesis_files/figure-latex/Figure3-5.png  used on input
+ line 384.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+[8 <./Thesis_files/figure-latex/Figure3-3.png>] [9 <./Thesis_files/figure-latex
+/Figure3-4.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 364.
+(Font)              <9> on input line 408.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 364.
-[5 <./Thesis_files/figure-latex/Figure2-1.png>] [6] [7]
+(Font)              <5> on input line 408.
+[10 <./Thesis_files/figure-latex/Figure3-5.png>] [11] [12]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 607.
+(Font)              <14> on input line 651.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 607.
-[8]
+(Font)              <10> on input line 651.
+[13]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
-25.
+69.
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [9]
+) [14]
 No file Thesis.bbl.
-[10] (./Thesis.aux)
+[15] (./Thesis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 83D7BE9791B1E7892E7A4BCA1DEE68A7;1248.
+(rerunfilecheck)             Checksum: F61E359B9AAA747C3E4C0BE8728872BD;1253.
  ) 
 Here is how much of TeX's memory you used:
- 16590 strings out of 480559
- 292724 string characters out of 5901444
- 607714 words of memory out of 5000000
- 33855 multiletter control sequences out of 15000+600000
+ 16661 strings out of 480559
+ 295177 string characters out of 5901444
+ 606117 words of memory out of 5000000
+ 33911 multiletter control sequences out of 15000+600000
  474004 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  72i,15n,80p,304b,905s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -979,10 +1026,10 @@ ers/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pf
 b><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/
 lmsy10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/p
 ublic/lm/lmsy8.pfb>
-Output written on Thesis.pdf (10 pages, 424902 bytes).
+Output written on Thesis.pdf (15 pages, 443513 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 227 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
- 120 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 321 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 
