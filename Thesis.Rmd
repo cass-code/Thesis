@@ -153,8 +153,11 @@ The plots below (\ref{Figure1}) graph the time series for cigarette quantity, le
 
 ```{r Figure1, echo=FALSE, warning =  FALSE, fig.align = 'center', fig.cap = "Time Series Plot \\label{Figure1}", fig.ext = 'png', fig.height = 5, fig.width = 6}
 
-source("code/ts_plot.R")
-Plot <- ts_plot(log_data)
+source("code/ts_plot_log.R")
+Plot <- ts_plot_log(log_data)
+source("code/plot_ts.R")
+ts <- plot_ts(log_data)
+
 
 ```
 

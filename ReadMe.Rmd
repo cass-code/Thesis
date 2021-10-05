@@ -27,6 +27,40 @@ data <- read_excel(filePath)
 
 ```
 
+# Table of acronyms
+
+```{r codes, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Time Series Plot \\label{tab}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+library(xtable)
+Acronym <- c('MPPC', 'WAP', 'DP', "DNP")
+Meaning <- c('Most Popular Price Category', 'Weighted Average Price', "Duty Paid", 'Duty Not Paid')
+#Shorthand <- c('QDP','PREALWAPDP','PREALWAPDNP', 'YDISPREAL')
+#Meaning <- c('Quantity Duties Paid', 'Real Price Weighted Average ', '')
+
+code <- data.frame(Acronym, Meaning)
+
+data <- code %>% tibble::as_tibble()
+
+table <- xtable(data, caption = "Shorthand Codes \\label{tab1}")
+  print.xtable(table,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+
+```
+
+
+# Plot time series
+
+```{r Figure1, echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Time Series Plot \\label{plot1}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+source("code/plot_ts.R")
+ts <- plot_ts(log_data)
+```
 
 ```{r}
 # xl_data <- "C:/Users/Cassandra/OneDrive/Documents/2021 Academics/Thesis/Thesis/data/Copy of Item Sales, Pricing - Anelisa worked.xlsx"

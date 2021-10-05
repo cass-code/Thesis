@@ -1,35 +1,47 @@
 # Plot the time series
 plot_ts <- function(log_data){
 
-    # Calling necessary libraries
-    library(tidyverse)
-    library(vars)
-    library(mFilter)
-    library(tseries)
-    library(TSstudio)
-    library(forecast)
-    library(tidyverse)
-    library(gridExtra)
-    library(grid)
-    library(ggplot2)
-    library(ggplotify)
+        # libraries
+        library(tidyverse)
+        library(gridExtra)
+        library(grid)
+        library(ggplot2)
+        library(ggplotify)
+        library(dplyr)
 
-    # creating time series objects (starting in the first month of 2012 and ending in the third month of 2020)
-    log_QDP <- ts(log_data$log_QDP, start=c(2012, 1), end=c(2020, 3), frequency=12)
-    log_PREALWAPDP <- ts(log_data$log_PREALWAPDP, start=c(2012, 1), end=c(2020, 3), frequency=12)
-    log_PREALWAPDNP <- ts(log_data$log_PREALWAPDNP, start=c(2012, 1), end=c(2020, 3), frequency=12)
-    log_YDISPREAL <- ts(log_data$log_YDISPREAL, start=c(2012, 1), end=c(2020, 3), frequency=12)
+        # plotting the time series using ggplot2
 
-    # Plotting the individual time series
-    QDP_graph <- as.grob(ts_plot(log_QDP))
-    PREALWAPDNP_graph <- as.grob(ts_plot(log_PREALWAPDNP))
-    PREALWAPDP_graph <- as.grob(ts_plot(log_PREALWAPDP))
-    YDISPREAL_graph <- as.grob(ts_plot(log_YDISPREAL))
+        QDP_graph <- ggplot(log_data, aes(x=DATE, y=QDP)) +
+            geom_line(color="#000050") +
+            xlab("Year") +
+            ylab("Cigarette sticks millions") +
+            theme_classic() +
+            ggtitle("Quantity of Cigarettes")
 
-    # Arranging the time series graphs
-    grid.arrange(QDP_graph, PREALWAPDP_graph, PREALWAPDNP_graph, YDISPREAL_graph, nrow=2, ncol=2)
+        PREALWAPDP_graph <- ggplot(log_data, aes(x=log_data$DATE, y=log_data$PREALWAPDP)) +
+            geom_line(color="#000050") +
+            xlab("Year") +
+            ylab("Real Price of Legal Cigarettes") +
+            theme_classic() +
+            ggtitle("Real Price of Legal Cigarettes")
 
+        PREALWAPDNP_graph <- ggplot(log_data, aes(x=log_data$DATE, y=log_data$PREALWAPDNP)) +
+            geom_line(color="#000050") +
+            xlab("Year") +
+            ylab("Real Price of Illicit Cigarettes") +
+            theme_classic() +
+            ggtitle("Real Price of Illicit Cigarettes")
 
+        YDISPREAL_graph <- ggplot(log_data, aes(x=log_data$DATE, y=log_data$YDISPREAL)) +
+            geom_line(color="#000050") +
+            xlab("Year") +
+            ylab("Real Income") +
+            theme_classic() +
+            ggtitle("Real Income")
 
+        # arranging the plots
+
+        g <-  grid.arrange(QDP_graph, PREALWAPDP_graph, PREALWAPDNP_graph, YDISPREAL_graph, nrow=2, ncol=2)
+        g
 
 }

@@ -1,0 +1,291 @@
+---
+# IMPORTANT: Change settings here, but DO NOT change the spacing.
+# Remove comments and add values where applicable.
+# The descriptions below should be self-explanatory
+
+title: "Modelling Tobacco Demand: How the Illicit Cigarette Market Constrains the Legal Market"
+subtitle: "Thesis Draft"
+
+documentclass: "elsarticle"
+
+# --------- Thesis title (Optional - set to FALSE by default).
+# You can move the details below around as you please.
+Thesis_FP: FALSE
+#Entry1: "How the Illicit Cigarette Market Constrains the Legal Market"
+#Entry2: "Thesis Proposal" # textbf for bold
+# Entry3: "A thesis submitted toward the degree of Doctor of Philosophy"
+# Uni_Logo: Tex/Logo.png # Place a logo in the indicated location (from your root, e.g. defaults to ~/Tex/Logo.png) and uncomment this line. Leave uncommented for no image
+# Logo_width: 0.3 # If using a logo - use this to set width (size) of image
+# Entry4: "Under the supervision of: \\vfill Prof. Joe Smith and Dr. Frank Smith"
+# Entry5: "Stellenbosch University"
+# Entry6: April 2020
+# Entry7:
+# Entry8:
+
+# --------- Front Page
+# Comment: ----- Follow this pattern for up to 5 authors
+AddTitle: TRUE # Use FALSE when submitting to peer reviewed platform. This will remove author names.
+Author1: "Cassandra Pengelly"  # First Author - note the thanks message displayed as an italic footnote of first page.
+Ref1: "Stellenbosch University" # First Author's Affiliation
+# Email1: "20346212\\@sun.ac.za" # First Author's Email address
+
+# Author2: "John Smith"
+# Ref2: "Some other Institution, Cape Town, South Africa"
+# Email2: "John\\@gmail.com"
+# CommonAffiliation_12: TRUE # If Author 1 and 2 have a common affiliation. Works with _13, _23, etc.
+
+# Author1: "Cassandra Pengelly^[__Contributions:__  \\newline _The authors would like to thank no institution for money donated to this project. Thank you sincerely._]"  # First Author - note the thanks message displayed as an italic footnote of first page.
+# Ref1: "Prescient Securities, Cape Town, South Africa" # First Author's Affiliation
+# Email1: "nfkatzke\\@gmail.com" # First Author's Email address
+
+CorrespAuthor_1: FALSE  # If corresponding author is author 3, e.g., use CorrespAuthor_3: TRUE
+
+# Comment out below to remove both. JEL Codes only given if keywords also given.
+# keywords: "Multivariate GARCH \\sep Kalman Filter \\sep Copula" # Use \\sep to separate
+# JELCodes: "L250 \\sep L100"
+
+# ----- Manage headers and footers:
+#BottomLFooter: $Title$
+#BottomCFooter:
+#TopLHeader: \leftmark # Adds section name at topleft. Remove comment to add it.
+# BottomRFooter: "\\footnotesize Page \\thepage" # Add a '#' before this line to remove footer.
+# addtoprule: TRUE
+# addfootrule: TRUE               # Use if footers added. Add '#' to remove line.
+
+# --------- page margins:
+margin: 2.3 # Sides
+bottom: 2 # bottom
+top: 2.5 # Top
+HardSet_layout: TRUE # Hard-set the spacing of words in your document. This will stop LaTeX squashing text to fit on pages, e.g.
+# This is done by hard-setting the spacing dimensions. Set to FALSE if you want LaTeX to optimize this for your paper.
+
+# --------- Line numbers
+linenumbers: FALSE # Used when submitting to journal
+
+# ---------- References settings:
+# You can download cls format here: https://www.zotero.org/ - simply search for your institution. You can also edit and save cls formats here: https://editor.citationstyles.org/about/
+# Hit download, store it in Tex/ folder, and change reference below - easy.
+bibliography: Tex/ref.bib       # Do not edit: Keep this naming convention and location.
+csl: Tex/harvard-stellenbosch-university.csl # referencing format used.
+# By default, the bibliography only displays the cited references. If you want to change this, you can comment out one of the following:
+#nocite: '@*' # Add all items in bibliography, whether cited or not
+# nocite: |  # add specific references that aren't cited
+#  @grinold2000
+#  @Someoneelse2010
+
+# ---------- General:
+RemovePreprintSubmittedTo: TRUE  # Removes the 'preprint submitted to...' at bottom of titlepage
+Journal: "Journal of Finance"   # Journal that the paper will be submitting to, if RemovePreprintSubmittedTo is set to TRUE.
+toc: FALSE                       # Add a table of contents
+numbersections: TRUE             # Should sections (and thus figures and tables) be numbered?
+fontsize: 11pt                  # Set fontsize
+linestretch: 1.2                # Set distance between lines.
+link-citations: TRUE            # This creates dynamic links to the papers in reference list.
+
+### Adding additional latex packages:
+# header-includes:
+#    - \usepackage{colortbl} # Add additional packages here.
+
+output:
+  pdf_document:
+    keep_tex: TRUE
+    template: Tex/TexDefault.txt
+    fig_width: 3.5 # Adjust default figure sizes. This can also be done in the chunks of the text.
+    fig_height: 3.5
+# abstract: |
+#   The illegal cigarette market has become an increasing problem in South Africa. 
+---
+
+<!-- First: Set your default preferences for chunk options: -->
+
+<!-- If you want a chunk's code to be printed, set echo = TRUE. message = FALSE stops R printing ugly package loading details in your final paper too. I also suggest setting warning = FALSE and checking for warnings in R, else you might find ugly warnings in your paper. -->
+
+
+
+<!-- ############################## -->
+<!-- # Start Writing here: -->
+<!-- ############################## -->
+
+
+
+The main aim of the study is to investigate the relationship between the legal and illegal tobacco market in South Africa. The study intends to:
+
+* Define the legal and illegal tobacco market
+
+* Model tobacco demand
+
+* Estimate price elasticities
+
+* Understand whether the illegal tobacco market constrains the legal market
+
+
+
+
+According to @FATF[p. 7], the definition of illicit trading of tobacco products is: “…the supply, distribution and sale of smuggled genuine, counterfeit, or cheap white tobacco products…” where smuggling is conducted to avoid excise taxes, and/or to evade rules prohibiting the sale of such goods. As @Saenz acknowledge, one of the difficulties in investigating and modelling tobacco is deciding how to measure illicit trade, given the limits on the availability of data. These authors suggest that researchers studying illicit trade should cross-validate their estimates using different methods. 
+
+This paper will measure the illicit market by two different methods. The first method defines the illicit market by price: if a pack of cigarettes is sold for less than the sum of the excise duty and VAT, then it follows that it has been sold illegally. The logic being that there is no economic incentive to sell packs at a loss, which suggests that if a pack is being sold at less than its tax amount, tax is not being paid on the cigarettes and they are thus illegal. The second method defines the illicit market by volume: the illegal market is the difference between the tax that should be paid on the total cigarette packs produced and sold, and the actual tax paid.
+
+Following a similar approach as @Bos[p.9], a vector autoregression will be used to estimate the long run elasticities of cigarette consumption. The proposed base model is described by \ref{eq1}  
+
+\begin{align}
+ Q_t = \mu + \sum_{i = 1}^{n}\beta_iQ_{t-i} +\sum_{i = 1}^{n}\gamma_iP_{t-i} + \sum_{i = 1}^{n}\theta_iY_{t-i} + \sum_{i = 1}^{n}\phi_iI_{t-i} \label{eq1}
+\end{align}
+
+where $Q_t$ is the log of cigarette consumption,\newline
+$P_{t}$ is the log of real cigarette price,\newline
+$Y_{t}$ is the log of real disposable income,\newline
+$I_{t}$ is the log of real illicit cigarette price,\newline
+$n$ is the number of lags and t is measured in months
+
+# Data \label{dat}
+
+The sample period for this study runs from January 2012 to March 2020, such that There are 99 observation points for each variable in the data set. One of the advantages of using monthly data rather than annual data is that it allows for many more degrees of freedom. The data used includes figures for the prices and volumes of cigarettes in South Africa, tobacco excise duties, VAT, and disposable income. To prepare the data for analysis, first, the most popular price category (MPPC) was identified as the 20-cigarette pack. Then a weighted average of before-tax 20-pack prices was used as a base price. The excise duty per 20's pack and VAT and were then added to the base price to calculate the price of licit cigarettes. The licit, illicit and disposable income amounts were adjusted for inflation, taking December 2016 as the base month and year. All of the variables have been transformed into log form. 
+
+<!-- ![Time series plots](img/time_series_plots.png){width=100%, height=100%}\label{plot} -->
+
+```{r, echo=FALSE, include=FALSE, warning=FALSE, results='hide', eval=TRUE}
+#list.files('code/', full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
+
+# read in the data - add the dataset's path to filePath
+library(readxl)
+filePath <- as.character("C:/Users/Cassandra/OneDrive/Documents/2021 Academics/Thesis/Thesis/data/Data.xlsx")
+data <- read_excel(filePath)
+source("code/data_clean.R")
+log_data <- data_clean(data)
+```
+
+The figure below \ref{plot1} plots the time series of the logged variables. The graphs show that the data could be trending, which is formally tested in section \ref{Meth}.
+
+```{r Figure2, echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Time Series Plot \\label{plot1}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+source("code/ts_plot_log.R")
+ts1 <- ts_plot_log(log_data)
+```
+
+
+# Methodology \label{Meth}
+
+To check whether the data is stationary, a number of tests is employed. First the autocorrelation functions are plotted below \ref{plot2}. They indicate that all four series are persistent; this is confirmed by the Ljung-Box tests in table \ref{box}. The Ljung-Box test for independence assesses whether there is significant evidence for non-zero correlations at a given lag, with the null hypothesis that there is independence in a given time series. A low p-value indicates a signal of non-stationarity.
+
+![\label{plot2} ACF Plots](img/ACF.png) 
+
+```{r box, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Ljung \\label{box}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+library(xtable)
+source("code/box_test.R")
+
+box <- box_test(log_data)
+
+data <- box %>% tibble::as_tibble()
+
+table <- xtable(data, caption = "Ljung-Box Test \\label{box}")
+  print.xtable(table,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+
+```
+The augmented Dickey Fuller test suggests that all four of the series contain a unit root (using the number of lags as 10^[Some of the series test as stationary when the number of lags is reduced]. This further suggests that the series are non-stationary. 
+
+```{r adf, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "\\label{adf}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+library(xtable)
+source("code/ADF.R")
+
+adf <- ADF(log_data)
+
+data <- adf %>% tibble::as_tibble()
+
+table <- xtable(data, caption = "Augmented Dickey-Fuller Test \\label{adf}")
+  print.xtable(table,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+
+```
+
+To assess whether there are cointegrating relationships that exist, the Johansen test was employed. According to the AIC criterion, the appropriate number of lags to use for the test is 10.
+
+```{r lag, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+library(xtable)
+source("code/lag.R")
+
+lag <- lag(log_data)
+
+data <- lag %>% tibble::as_tibble()
+
+table <- xtable(data, caption = "Optimal Lag Selection \\label{lag}")
+  print.xtable(table,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+
+```
+Two Johansen tests we for The results from the cointegration test
+
+```{r coint, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Cointegration Test Results\\label{coint}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+library(xtable)
+library(tidyverse)
+source("code/coint.R")
+source("code/coint_trace.R")
+
+ct <- coint_trace(log_data)
+ce <- coint(log_data)
+
+
+data <- ct #%>% tibble::as_tibble()
+
+table <- xtable(data, caption = "Johansen Trace Test for Cointegration Results\\label{coint}")
+  print.xtable(table,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = TRUE
+             )
+  
+data1 <- ce #%>% tibble::as_tibble()
+  
+table <- xtable(data1, caption = "Johansen Eigenvalue Test for Cointegration Results\\label{eigen}")
+  print.xtable(table,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = TRUE
+             )
+
+```
+
+
+\newpage
+
+# References {-}
+
+<div id="refs"></div>
+
+
+
+
+
+

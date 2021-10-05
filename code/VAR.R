@@ -10,6 +10,7 @@ library(mFilter)
 library(tseries)
 library(forecast)
 library(tidyverse)
+library(stargazer)
 
 # creating time series objects
 log_QDP <- ts(log_data$log_QDP, start=c(2012, 1), end=c(2020, 3), frequency=12)

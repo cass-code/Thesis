@@ -7,7 +7,7 @@ ACF <- function(log_data){
     library(gridExtra)
     library(grid)
     library(dplyr)
-    #library(oddsratio)
+   #library(oddsratio)
    #source("code/ac_kotze.R")
 
 

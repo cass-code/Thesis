@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.21)  2 OCT 2021 08:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.21)  5 OCT 2021 18:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Thesis.tex
-(./Thesis.tex
+**Thesis_Draft.tex
+(./Thesis_Draft.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-08-27>
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/elsarticle/els
@@ -100,7 +100,7 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 \@enLab=\toks18
 \@sep=\skip49
 \@@sep=\skip50
-(./Thesis.spl)
+(./Thesis_Draft.spl)
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/natbib.
 sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
@@ -110,7 +110,7 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count198
 )
 \splwrite=\write3
-\openout3 = `Thesis.spl'.
+\openout3 = `Thesis_Draft.spl'.
 
 \appnamewidth=\dimen145
 )
@@ -529,12 +529,12 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip74
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 88.
+Package hyperref Info: Option `breaklinks' set `true' on input line 87.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 88.
+(hyperref)                setting the option has no effect on input line 87.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 88.
+Package hyperref Info: Option `colorlinks' set `true' on input line 87.
 
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/siunitx/siunit
 x.sty
@@ -665,138 +665,27 @@ ion.sty
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 ))
 \cslhangindent=\skip80
+(./Thesis_Draft.aux)
+\openout1 = `Thesis_Draft.aux'.
 
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.st
-y
-\UL@box=\box75
-\UL@hyphenbox=\box76
-\UL@skip=\skip81
-\UL@hook=\toks40
-\UL@height=\dimen260
-\UL@pe=\count317
-\UL@pixel=\dimen261
-\ULC@box=\box77
-Package: ulem 2019/11/18
-\ULdepth=\dimen262
-)
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/color
-tbl.sty
-Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks41
-\minrowclearance=\skip82
-)
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable
-/threeparttable.sty
-Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box78
-)
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfi
-g.sty
-\wrapoverhang=\dimen263
-\WF@size=\dimen264
-\c@WF@wrappedlines=\count318
-\WF@box=\box79
-\WF@everypar=\toks42
-Package: wrapfig 2003/01/31  v 3.6
-)
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/adjustbox/adju
-stbox.sty
-Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
-
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyva
-l.sty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
-
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/xkeyval/xkey
-val.tex
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvu
-tils.tex
-\XKV@toks=\toks43
-\XKV@tempa@toks=\toks44
-)
-\XKV@depth=\count319
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/adjustbox/adjc
-alc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/adjustbox/trim
-clip.sty
-Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
-
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/collectbox/col
-lectbox.sty
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box80
-)
-\tc@llx=\dimen265
-\tc@lly=\dimen266
-\tc@urx=\dimen267
-\tc@ury=\dimen268
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/adjustbox/tc-p
-dftex.def
-File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen269
-\adjbox@Height=\dimen270
-\adjbox@Depth=\dimen271
-\adjbox@Totalheight=\dimen272
-\adjbox@pwidth=\dimen273
-\adjbox@pheight=\dimen274
-\adjbox@pdepth=\dimen275
-\adjbox@ptotalheight=\dimen276
-
-(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwi
-dth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box81
-\sift@deathcycles=\count320
-\@vwid@loff=\dimen277
-\@vwid@roff=\dimen278
-)) (./Thesis.aux
-
-LaTeX Warning: Label `data' multiply defined.
-
-
-LaTeX Warning: Label `Figure1' multiply defined.
-
-
-LaTeX Warning: Label `ACF' multiply defined.
-
-
-LaTeX Warning: Label `ACF' multiply defined.
-
-
-LaTeX Warning: Label `ACF' multiply defined.
-
-
-LaTeX Warning: Label `ACF' multiply defined.
-
-)
-\openout1 = `Thesis.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 181.
-LaTeX Font Info:    ... okay on input line 181.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 181.
-LaTeX Font Info:    ... okay on input line 181.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 181.
-LaTeX Font Info:    ... okay on input line 181.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 181.
-LaTeX Font Info:    ... okay on input line 181.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 181.
-LaTeX Font Info:    ... okay on input line 181.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 181.
-LaTeX Font Info:    ... okay on input line 181.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 181.
-LaTeX Font Info:    ... okay on input line 181.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 181.
-LaTeX Font Info:    ... okay on input line 181.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 181.
-LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
 
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/e
 pstopdf-base.sty
@@ -818,14 +707,14 @@ e
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includefoot 
 * h-part:(L,W,R)=(65.44142pt, 483.41216pt, 65.44142pt)
-* v-part:(T,H,B)=(65.44142pt, 672.62306pt, 56.9055pt)
+* v-part:(T,H,B)=(71.13188pt, 666.9326pt, 56.9055pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=483.41216pt
-* \textheight=642.62306pt
+* \textheight=636.9326pt
 * \oddsidemargin=-6.82857pt
 * \evensidemargin=-6.82857pt
-* \topmargin=-43.82857pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
@@ -843,7 +732,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 181.
+Package hyperref Info: Link coloring ON on input line 166.
 
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/namer
 ef.sty
@@ -857,188 +746,176 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ng/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count321
+\c@section@level=\count317
 )
-LaTeX Info: Redefining \ref on input line 181.
-LaTeX Info: Redefining \pageref on input line 181.
-LaTeX Info: Redefining \nameref on input line 181.
-(./Thesis.out) (./Thesis.out)
+LaTeX Info: Redefining \ref on input line 166.
+LaTeX Info: Redefining \pageref on input line 166.
+LaTeX Info: Redefining \nameref on input line 166.
+(./Thesis_Draft.out) (./Thesis_Draft.out)
 \@outlinefile=\write4
-\openout4 = `Thesis.out'.
+\openout4 = `Thesis_Draft.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: threeparttable package is loaded.
-Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<Tex/logo.png, id=56, 209.78375pt x 410.03188pt>
-File: Tex/logo.png Graphic file (type png)
-<use Tex/logo.png>
-Package pdftex.def Info: Tex/logo.png  used on input line 199.
-(pdftex.def)             Requested size: 108.76883pt x 212.59213pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-19.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+99.
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-19.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+99.
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-219.
+199.
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-219.
+199.
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 219.
+(Font)              <9> on input line 199.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 219.
+(Font)              <6> on input line 199.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 219.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 219
+(Font)              <5> on input line 199.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 199
 .
 
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.
 fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 219
+LaTeX Font Info:    Trying to load font information for U+msb on input line 199
 .
 
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.
 fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/p
-dftex.map} <./Tex/logo.png>] (./Thesis.toc [2
-
-
-])
-\tf@toc=\write5
-\openout5 = `Thesis.toc'.
-
-<Thesis_files/figure-latex/Figure1-1.png, id=99, 433.62pt x 361.35pt>
-File: Thesis_files/figure-latex/Figure1-1.png Graphic file (type png)
-<use Thesis_files/figure-latex/Figure1-1.png>
-Package pdftex.def Info: Thesis_files/figure-latex/Figure1-1.png  used on input
- line 332.
-(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
-<Thesis_files/figure-latex/Figure1-2.png, id=100, 433.62pt x 361.35pt>
-File: Thesis_files/figure-latex/Figure1-2.png Graphic file (type png)
-<use Thesis_files/figure-latex/Figure1-2.png>
-Package pdftex.def Info: Thesis_files/figure-latex/Figure1-2.png  used on input
- line 340.
-(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
-[3] [4 <./Thesis_files/figure-latex/Figure1-1.png>]
-<Thesis_files/figure-latex/Figure2-1.png, id=120, 433.62pt x 216.81pt>
-File: Thesis_files/figure-latex/Figure2-1.png Graphic file (type png)
-<use Thesis_files/figure-latex/Figure2-1.png>
-Package pdftex.def Info: Thesis_files/figure-latex/Figure2-1.png  used on input
- line 349.
-(pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
-[5 <./Thesis_files/figure-latex/Figure1-2.png>]
-<Thesis_files/figure-latex/Figure3-1.png, id=131, 433.62pt x 361.35pt>
-File: Thesis_files/figure-latex/Figure3-1.png Graphic file (type png)
-<use Thesis_files/figure-latex/Figure3-1.png>
-Package pdftex.def Info: Thesis_files/figure-latex/Figure3-1.png  used on input
- line 361.
-(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
-<Thesis_files/figure-latex/Figure3-2.png, id=132, 433.62pt x 361.35pt>
-File: Thesis_files/figure-latex/Figure3-2.png Graphic file (type png)
-<use Thesis_files/figure-latex/Figure3-2.png>
-Package pdftex.def Info: Thesis_files/figure-latex/Figure3-2.png  used on input
- line 369.
-(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
-[6 <./Thesis_files/figure-latex/Figure2-1.png>]
-<Thesis_files/figure-latex/Figure3-3.png, id=140, 433.62pt x 361.35pt>
-File: Thesis_files/figure-latex/Figure3-3.png Graphic file (type png)
-<use Thesis_files/figure-latex/Figure3-3.png>
-Package pdftex.def Info: Thesis_files/figure-latex/Figure3-3.png  used on input
- line 377.
-(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
-[7 <./Thesis_files/figure-latex/Figure3-1.png>]
-<Thesis_files/figure-latex/Figure3-4.png, id=148, 433.62pt x 361.35pt>
-File: Thesis_files/figure-latex/Figure3-4.png Graphic file (type png)
-<use Thesis_files/figure-latex/Figure3-4.png>
-Package pdftex.def Info: Thesis_files/figure-latex/Figure3-4.png  used on input
- line 385.
-(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
-[8 <./Thesis_files/figure-latex/Figure3-2.png>]
-<Thesis_files/figure-latex/Figure3-5.png, id=155, 433.62pt x 361.35pt>
-File: Thesis_files/figure-latex/Figure3-5.png Graphic file (type png)
-<use Thesis_files/figure-latex/Figure3-5.png>
-Package pdftex.def Info: Thesis_files/figure-latex/Figure3-5.png  used on input
- line 393.
-(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
-[9 <./Thesis_files/figure-latex/Figure3-3.png>] [10 <./Thesis_files/figure-late
-x/Figure3-4.png>]
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+99.
+(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 417.
+(Font)              <10.95> on input line 199.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 417.
-[11 <./Thesis_files/figure-latex/Figure3-5.png>] [12] [13]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 660.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 660.
-[14]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
-78.
+(Font)              <8> on input line 199.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+29.
 (c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [15]
-No file Thesis.bbl.
-[16] (./Thesis.aux)
+) [1
 
-LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C69AB138A054681CDCD6ADF4CAEF12C2;1253.
+{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/p
+dftex.map}]
+<Thesis_Draft_files/figure-latex/Figure2-1.png, id=40, 433.62pt x 361.35pt>
+File: Thesis_Draft_files/figure-latex/Figure2-1.png Graphic file (type png)
+<use Thesis_Draft_files/figure-latex/Figure2-1.png>
+Package pdftex.def Info: Thesis_Draft_files/figure-latex/Figure2-1.png  used on
+ input line 300.
+(pdftex.def)             Requested size: 433.61894pt x 361.34912pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[2]
+<img/ACF.png, id=55, 475.02469pt x 368.1253pt>
+File: img/ACF.png Graphic file (type png)
+<use img/ACF.png>
+Package pdftex.def Info: img/ACF.png  used on input line 321.
+(pdftex.def)             Requested size: 475.02351pt x 368.1244pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3 <./Thesis_Draft_files/figure-latex/Figure2-1.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[4 <./img/ACF.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[5]
+No file Thesis_Draft.bbl.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6] (./Thesis_Draft.aux)
+Package rerunfilecheck Info: File `Thesis_Draft.out' has not changed.
+(rerunfilecheck)             Checksum: A14E53B679D79C1FE3FCD5CCCB2F9A2A;271.
  ) 
 Here is how much of TeX's memory you used:
- 16675 strings out of 480559
- 295668 string characters out of 5901444
- 606174 words of memory out of 5000000
- 33922 multiletter control sequences out of 15000+600000
- 474004 words of font info for 79 fonts, out of 8000000 for 9000
+ 15264 strings out of 480559
+ 270542 string characters out of 5901444
+ 553848 words of memory out of 5000000
+ 32604 multiletter control sequences out of 15000+600000
+ 451175 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,15n,80p,304b,905s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-
-ts1.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/
-lm/lm-mathit.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/e
-nc/dvips/lm/lm-ec.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fo
-nts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texm
-f-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX
-/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/Users/Cassandra/AppData/Roamin
-g/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/Cassandra/AppDa
-ta/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/Cassan
-dra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Use
-rs/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pf
-b><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/
-lmmi12.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/p
-ublic/lm/lmmi8.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts
-/type1/public/lm/lmr10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-di
-st/fonts/type1/public/lm/lmr12.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/
-texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/Cassandra/AppData/Roaming/
-TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/Cassandra/AppData/R
-oaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/Cassandra/Ap
-pData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/Cassa
-ndra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Us
-ers/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pf
-b><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/
-lmsy10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/p
-ublic/lm/lmsy8.pfb>
-Output written on Thesis.pdf (16 pages, 451061 bytes).
+ 72i,11n,80p,277b,768s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{ref-Bos} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{ref-Saenz} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{ref-FATF} has been referenced but does not exist, r
+eplaced by a fixed one
+
+{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec
+.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/
+lm-mathsy.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/
+dvips/lm/lm-rm.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts
+/enc/dvips/lm/lm-mathex.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTe
+X/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/Cassandra/AppData/Roaming/
+TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/Cassandra/AppData
+/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/Cassandr
+a/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users
+/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><
+c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr
+10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/publi
+c/lm/lmr12.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/typ
+e1/public/lm/lmr6.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fo
+nts/type1/public/lm/lmr8.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-
+dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX
+/texmf-dist/fonts/type1/public/lm/lmri7.pfb><c:/Users/Cassandra/AppData/Roaming
+/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/Cassandra/AppData
+/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on Thesis_Draft.pdf (6 pages, 219168 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 259 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 160 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
