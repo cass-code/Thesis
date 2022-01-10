@@ -46,7 +46,7 @@ ts_plot_diff <- function(log_data){
             theme_classic() +
             ggtitle("Real Price Illicit Cigarettes")
 
-        YDISPREAL_graph <- ggplot(log_data1, aes(x=DATE, y=o)) +
+        YDISPREAL_graph <- ggplot(log_data1, aes(x=DATE, y=y)) +
             geom_line(color="#000050") +
             xlab("Year") +
             ylab("Real Disposable Income") +

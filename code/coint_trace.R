@@ -18,7 +18,7 @@ coint_trace <- function(log_data){
 
     # run Johansen test where null is that there is at least r cointegrating relationships
     # if we reject H0 for r<= 0 then it means we reject that there is are 0 or less than zero cointegrating relationships
-    cjtest1 <- ca.jo(dset, type="trace", ecdet = "const", K=9) # if test value > than crit value REJECT NULL
+    cjtest1 <- ca.jo(dset, type="trace", ecdet = "none", K=9) # if test value > than crit value REJECT NULL
     b <- summary(cjtest1)
 
     teststat <- data.frame(b@teststat)

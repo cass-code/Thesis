@@ -276,13 +276,13 @@ in months
 \hypertarget{data}{%
 \section{\texorpdfstring{Data \label{dat}}{Data }}\label{data}}
 
-The sample period for this study runs from January 2012 to March 2020,
-such that There are 99 observation points for each variable in the data
-set. One of the advantages of using monthly data rather than annual data
-is that it allows for many more degrees of freedom. The data used
-includes figures for the prices and volumes of cigarettes in South
-Africa, tobacco excise duties, VAT, and disposable income. To prepare
-the data for analysis, first, the most popular price category (MPPC) was
+The sample period for this study runs from January 2012 to March 2020.
+Monthly data is used such that there are 99 observation points for each
+variable in the data set. One of the advantages of using monthly data
+rather than annual data is that it allows for more degrees of freedom.
+The data used includes figures for the prices and volumes of cigarettes
+in South Africa, tobacco excise duties, VAT, and disposable income. To
+prepare the data for analysis the most popular price category (MPPC) was
 identified as the 20-cigarette pack. Then a weighted average of
 before-tax 20-pack prices was used as a base price. The excise duty per
 20's pack and VAT and were then added to the base price to calculate the
@@ -349,17 +349,32 @@ further suggests that the series are non-stationary.
 Time Series & p value & Test Result & Interpretation \\ 
   \hline
 Cigarette Quantity & 0.61 & Fail to reject Null & Non-stationary \\ 
-  Real Price Legal & 0.25 & Fail to reject Null & Non-stationary \\ 
-  Real Price Illegal & 0.60 & Fail to reject Null & Non-stationary \\ 
-  Real Disposable Income & 0.22 & Fail to reject Null & Non-stationary \\ 
+  Real Price Legal & 0.22 & Fail to reject Null & Non-stationary \\ 
+  Real Price Illegal & 0.38 & Fail to reject Null & Non-stationary \\ 
+  Real Disposable Income & 0.06 & Fail to reject Null & Non-stationary \\ 
    \hline
 \end{tabular}
 \caption{Augmented Dickey-Fuller Test \label{adf}} 
 \end{table}
 
-To assess whether there are cointegrating relationships that exist, the
-Johansen test was employed. According to the AIC criterion, the
-appropriate number of lags to use for the test is 10.
+To assess whether a long-run relationship between the variables exists,
+the Johansen test is employed. According to Akaike's information
+criterion (AIC), the appropriate maximum number of lags to use is 10
+(\ref{lag}). A lag order of 9 is used for the test, since the test
+requires a lag order of N - 1 = 10 - 1 = 9. Two Johansen tests are used:
+the Trace and the Maximum Eigenvalue tests. The Trace statistic test
+(\ref{coint}) shows we reject the null hypothesis that there are zero
+cointegrating relationships: the test statistic 85.85 is greater than
+the 1\% significance level of 55.43. The test results indicate that
+there is 1 cointegrating relationship. Similarly, the Maximum Eigenvalue
+test rejects that there are zero cointegrating relationships, and fails
+to reject that there is at most 1 cointegrating relationship. These
+results
+
+The results, presented in Appendix 4, show that there is one
+cointegrating vector among the variables. This signies the existence of
+a long-run relationship among the variables that can be combined with
+the short-run dynamics using a Vector Error Correction Model.21;30
 
 \begin{table}[H]
 \centering
@@ -373,18 +388,16 @@ AIC(n) & HQ(n) & SC(n) & FPE(n) \\
 \caption{Optimal Lag Selection \label{lag}} 
 \end{table}
 
-Two Johansen tests we for The results from the cointegration test
-
 \begin{table}[H]
 \centering
 \begin{tabular}{rrrrr}
   \hline
  & Test Statistic & 10\% & 5\% & 1\% \\ 
   \hline
-r$<$=3 & 4.70 & 7.52 & 9.24 & 12.97 \\ 
-  r$<$=2 & 25.12 & 17.85 & 19.96 & 24.60 \\ 
-  r$<$=1 & 49.88 & 32.00 & 34.91 & 41.07 \\ 
-  r=0 & 108.85 & 49.65 & 53.12 & 60.16 \\ 
+r$<$=3 & 1.21 & 6.50 & 8.18 & 11.65 \\ 
+  r$<$=2 & 6.04 & 15.66 & 17.95 & 23.52 \\ 
+  r$<$=1 & 26.89 & 28.71 & 31.52 & 37.22 \\ 
+  r=0 & 85.85 & 45.23 & 48.28 & 55.43 \\ 
    \hline
 \end{tabular}
 \caption{Johansen Trace Test for Cointegration Results\label{coint}} 
@@ -395,10 +408,10 @@ r$<$=3 & 4.70 & 7.52 & 9.24 & 12.97 \\
   \hline
  & Test Statistic & 10\% & 5\% & 1\% \\ 
   \hline
-r$<$=3 & 4.70 & 7.52 & 9.24 & 12.97 \\ 
-  r$<$=2 & 20.42 & 13.75 & 15.67 & 20.20 \\ 
-  r$<$=1 & 24.76 & 19.77 & 22.00 & 26.81 \\ 
-  r=0 & 58.97 & 25.56 & 28.14 & 33.24 \\ 
+r$<$=3 & 1.21 & 6.50 & 8.18 & 11.65 \\ 
+  r$<$=2 & 4.83 & 12.91 & 14.90 & 19.19 \\ 
+  r$<$=1 & 20.85 & 18.90 & 21.07 & 25.75 \\ 
+  r=0 & 58.95 & 24.78 & 27.14 & 32.14 \\ 
    \hline
 \end{tabular}
 \caption{Johansen Eigenvalue Test for Cointegration Results\label{eigen}} 
@@ -409,6 +422,10 @@ r$<$=3 & 4.70 & 7.52 & 9.24 & 12.97 \\
 \hypertarget{references}{%
 \section*{References}\label{references}}
 \addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\end{CSLReferences}
 
 \bibliography{Tex/ref}
 

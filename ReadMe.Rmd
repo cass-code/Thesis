@@ -78,3 +78,7 @@ excel_sheets(path=excel_2) #list the sheets in the excel data
 # #Load a function from your 'code' folder. This e.g. plots scatters to your own preferences.
 ```
 
+
+```{r acf_diff, echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Differenced Autocorrelation Functions \\label{acfdiff}", out.width="90%"}
+knitr::include_graphics("img/ACF_diff.png")
+```

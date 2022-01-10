@@ -14,8 +14,6 @@ ACF_plot <- function(log_data){
     acf(log_data$YDISPREAL,lag.max = length(log_data$YDISPREAL),
         xlab = "lag", ylab = 'ACF', main='Real Disposable Income')
 
-
-
      library(tidyverse)
     library(gridExtra)
     library(grid)

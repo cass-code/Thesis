@@ -20,16 +20,16 @@ library(dplyr)
     PREALWAPDP_graph <- ggplot(log_data, aes(x=log_data$DATE, y=log_data$log_PREALWAPDP)) +
         geom_line(color="#000050") +
         xlab("Year") +
-        ylab("Real Price of Legal Cigarettes") +
+        ylab("Real Price Legal Cigarettes") +
         theme_classic() +
-        ggtitle("Real Price of Legal Cigarettes")
+        ggtitle("Real Price Legal Cigarettes")
 
     PREALWAPDNP_graph <- ggplot(log_data, aes(x=log_data$DATE, y=log_data$log_PREALWAPDNP)) +
         geom_line(color="#000050") +
         xlab("Year") +
         ylab("Real Price of Illicit Cigarettes") +
         theme_classic() +
-        ggtitle("Real Price of Illicit Cigarettes")
+        ggtitle("Real Price Illicit Cigarettes")
 
     YDISPREAL_graph <- ggplot(log_data, aes(x=log_data$DATE, y=log_data$log_YDISPREAL)) +
         geom_line(color="#000050") +

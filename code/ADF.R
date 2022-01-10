@@ -4,9 +4,9 @@ library(tseries)
 library(stargazer)
 
 a <- adf.test(log_data$log_QDP, k=10)
-b <- adf.test(log_data$log_PREALWAPDP, k=10)
-c <- adf.test(log_data$log_PREALWAPDNP, k=10)
-d <- adf.test(log_data$log_YDISPREAL, k=10)
+b <- adf.test(log_data$log_PREALWAPDP, k=2)
+c <- adf.test(log_data$log_PREALWAPDNP, k=7)
+d <- adf.test(log_data$log_YDISPREAL, k=7)
 
 p_value <- c(round(a[[4]], 2), round(b[[4]],2), round(c[[4]],2), round(d[[4]],2))
 Time_Series <- c('Cigarette Quantity', 'Real Price Legal', "Real Price Illegal", 'Real Disposable Income')

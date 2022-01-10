@@ -143,23 +143,18 @@ The sample period for this study runs from January 2012 to March 2020. Monthly d
 
 <!-- ![Time series plots](img/time_series_plots.png){width=100%, height=100%}\label{plot} -->
 
-```{r, echo=FALSE, include=FALSE, warning=FALSE, results='hide', eval=TRUE}
-#list.files('code/', full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
 
-# read in the data - add the dataset's path to filePath
-library(readxl)
-filePath <- as.character("C:/Users/Cassandra/OneDrive/Documents/2021 Academics/Thesis/Thesis/data/Data.xlsx")
-data <- read_excel(filePath)
-source("code/data_clean.R")
-log_data <- data_clean(data)
-```
 
 The figure below \ref{plot1} plots the time series of the logged variables. The graphs show that the data could be trending, which is formally tested in section \ref{Meth}.
 
-```{r Figure2, echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Time Series Plot \\label{plot1}", fig.ext = 'png', fig.height = 5, fig.width = 6}
-source("code/ts_plot_log.R")
-ts1 <- ts_plot_log(log_data)
-```
+\begin{figure}
+
+{\centering \includegraphics{Thesis_Draft_files/figure-latex/Figure2-1} 
+
+}
+
+\caption{Time Series Plot \label{plot1}}\label{fig:Figure2}
+\end{figure}
 
 
 # Methodology \label{Meth}
@@ -168,125 +163,91 @@ To check whether the data is stationary, a number of tests is employed. First th
 
 ![\label{plot2} ACF Plots](img/ACF.png) 
 
-```{r box, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Ljung \\label{box}", fig.ext = 'png', fig.height = 5, fig.width = 6}
-
-library(xtable)
-source("code/box_test.R")
-
-box <- box_test(log_data)
-
-data <- box %>% tibble::as_tibble()
-
-table <- xtable(data, caption = "Ljung-Box Test \\label{box}")
-  print.xtable(table,
-             # tabular.environment = "longtable",
-             floating = TRUE,
-             table.placement = 'H',
-             # scalebox = 0.3,
-             comment = FALSE,
-             caption.placement = 'bottom',
-             include.rownames = FALSE
-             )
-
-```
+\begin{table}[H]
+\centering
+\begin{tabular}{lrll}
+  \hline
+Time Series & p value & Test Result & Interpretation \\ 
+  \hline
+Cigarette Quantity & 0.00 & Reject Null & Non-stationary \\ 
+  Real Price Legal & 0.00 & Reject Null & Non-stationary \\ 
+  Real Price Illegal & 0.00 & Reject Null & Non-stationary \\ 
+  Real Disposable Income & 0.00 & Reject Null & Non-stationary \\ 
+   \hline
+\end{tabular}
+\caption{Ljung-Box Test \label{box}} 
+\end{table}
 The augmented Dickey Fuller test suggests that all four of the series contain a unit root (using the number of lags as 10^[Some of the series test as stationary when the number of lags is reduced]. This further suggests that the series are non-stationary. 
 
-```{r adf, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "\\label{adf}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+\begin{table}[H]
+\centering
+\begin{tabular}{lrll}
+  \hline
+Time Series & p value & Test Result & Interpretation \\ 
+  \hline
+Cigarette Quantity & 0.61 & Fail to reject Null & Non-stationary \\ 
+  Real Price Legal & 0.22 & Fail to reject Null & Non-stationary \\ 
+  Real Price Illegal & 0.38 & Fail to reject Null & Non-stationary \\ 
+  Real Disposable Income & 0.06 & Fail to reject Null & Non-stationary \\ 
+   \hline
+\end{tabular}
+\caption{Augmented Dickey-Fuller Test \label{adf}} 
+\end{table}
 
-library(xtable)
-source("code/ADF.R")
-
-adf <- ADF(log_data)
-
-data <- adf %>% tibble::as_tibble()
-
-table <- xtable(data, caption = "Augmented Dickey-Fuller Test \\label{adf}")
-  print.xtable(table,
-             # tabular.environment = "longtable",
-             floating = TRUE,
-             table.placement = 'H',
-             # scalebox = 0.3,
-             comment = FALSE,
-             caption.placement = 'bottom',
-             include.rownames = FALSE
-             )
-
-```
-
-To assess whether a long-run relationship between the variables exists, the Johansen test is employed. According to Akaike's information criterion (AIC), the appropriate maximum number of lags to use is 10 (\ref{lag}). A lag order of 9 is used for the test, since the test requires a lag order of N - 1 = 10 - 1 = 9. Two Johansen tests are used: the Trace and the Maximum Eigenvalue tests. The Trace statistic test (\ref{coint}) shows we reject the null hypothesis that there are zero cointegrating relationships: the test statistic 85.85 is greater than the 1% significance level of 55.43. The test results indicate that there is 1 cointegrating relationship. Similarly, the Maximum Eigenvalue test rejects that there are zero cointegrating relationships, and fails to reject that there is at most 1 cointegrating relationship. The presence of a cointegrating vector amongst the variables suggests a Vector Error Correction Model is appropriate to analyse the variable dynamics.
+To assess whether a long-run relationship between the variables exists, the Johansen test is employed. According to Akaike's information criterion (AIC), the appropriate maximum number of lags to use is 10 (\ref{lag}). A lag order of 9 is used for the test, since the test requires a lag order of N - 1 = 10 - 1 = 9. Two Johansen tests are used: the Trace and the Maximum Eigenvalue tests. The Trace statistic test (\ref{coint}) shows we reject the null hypothesis that there are zero cointegrating relationships: the test statistic 85.85 is greater than the 1% significance level of 55.43. The test results indicate that there is 1 cointegrating relationship. Similarly, the Maximum Eigenvalue test rejects that there are zero cointegrating relationships, and fails to reject that there is at most 1 cointegrating relationship. These results
 
 The results, presented in Appendix 4, show
 that there is one cointegrating vector among the variables. This signies the
 existence of a long-run relationship among the variables that can be combined
 with the short-run dynamics using a Vector Error Correction Model.21;30
 
-```{r lag, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "", fig.ext = 'png', fig.height = 5, fig.width = 6}
+\begin{table}[H]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+AIC(n) & HQ(n) & SC(n) & FPE(n) \\ 
+  \hline
+ 10 &   5 &   2 &  10 \\ 
+   \hline
+\end{tabular}
+\caption{Optimal Lag Selection \label{lag}} 
+\end{table}
 
-library(xtable)
-source("code/lag.R")
-
-lag <- lag(log_data, 10)
-
-data <- lag %>% tibble::as_tibble()
-
-table <- xtable(data, caption = "Optimal Lag Selection \\label{lag}")
-  print.xtable(table,
-             # tabular.environment = "longtable",
-             floating = TRUE,
-             table.placement = 'H',
-             # scalebox = 0.3,
-             comment = FALSE,
-             caption.placement = 'bottom',
-             include.rownames = FALSE
-             )
-
-```
-
-```{r coint, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Cointegration Test Results\\label{coint}", fig.ext = 'png', fig.height = 5, fig.width = 6}
-
-library(xtable)
-library(tidyverse)
-source("code/coint.R")
-source("code/coint_trace.R")
-
-ct <- coint_trace(log_data)
-ce <- coint(log_data)
-
-
-data <- ct #%>% tibble::as_tibble()
-
-table <- xtable(data, caption = "Johansen Trace Test for Cointegration Results\\label{coint}")
-  print.xtable(table,
-             # tabular.environment = "longtable",
-             floating = TRUE,
-             table.placement = 'H',
-             # scalebox = 0.3,
-             comment = FALSE,
-             caption.placement = 'bottom',
-             include.rownames = TRUE
-             )
-  
-data1 <- ce #%>% tibble::as_tibble()
-  
-table <- xtable(data1, caption = "Johansen Eigenvalue Test for Cointegration Results\\label{eigen}")
-  print.xtable(table,
-             # tabular.environment = "longtable",
-             floating = TRUE,
-             table.placement = 'H',
-             # scalebox = 0.3,
-             comment = FALSE,
-             caption.placement = 'bottom',
-             include.rownames = TRUE
-             )
-
-```
+\begin{table}[H]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Test Statistic & 10\% & 5\% & 1\% \\ 
+  \hline
+r$<$=3 & 1.21 & 6.50 & 8.18 & 11.65 \\ 
+  r$<$=2 & 6.04 & 15.66 & 17.95 & 23.52 \\ 
+  r$<$=1 & 26.89 & 28.71 & 31.52 & 37.22 \\ 
+  r=0 & 85.85 & 45.23 & 48.28 & 55.43 \\ 
+   \hline
+\end{tabular}
+\caption{Johansen Trace Test for Cointegration Results\label{coint}} 
+\end{table}
+\begin{table}[H]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Test Statistic & 10\% & 5\% & 1\% \\ 
+  \hline
+r$<$=3 & 1.21 & 6.50 & 8.18 & 11.65 \\ 
+  r$<$=2 & 4.83 & 12.91 & 14.90 & 19.19 \\ 
+  r$<$=1 & 20.85 & 18.90 & 21.07 & 25.75 \\ 
+  r=0 & 58.95 & 24.78 & 27.14 & 32.14 \\ 
+   \hline
+\end{tabular}
+\caption{Johansen Eigenvalue Test for Cointegration Results\label{eigen}} 
+\end{table}
 
 
 \newpage
 
-<!-- # References {-} -->
+# References {-}
 
-<!-- <div id="refs"></div> -->
+<div id="refs"></div>
 
 
 

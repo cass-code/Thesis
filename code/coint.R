@@ -20,7 +20,7 @@ coint <- function(log_data){
     # run Johansen test where null is that there is at least r cointegrating relationships
     # if we reject H0 for r<= 0 then it means we reject that there is are 0 or less than zero cointegrating relationships
     # both tests show that there is at least 3 cointegrating relationships
-    cjtest2 <- ca.jo(dset, type = "eigen", ecdet = "const", K=9) # for r<=1, test stat is 24.76 > 22.00 so reject at 5%
+    cjtest2 <- ca.jo(dset, type = "eigen", ecdet = "none", K=9) # for r<=1, test stat is 24.76 > 22.00 so reject at 5%
     b<-summary(cjtest2)
     teststat <- data.frame(b@teststat)
     c<- data.frame(b@cval)
