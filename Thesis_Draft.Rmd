@@ -81,10 +81,7 @@ numbersections: TRUE             # Should sections (and thus figures and tables)
 fontsize: 11pt                  # Set fontsize
 linestretch: 1.2                # Set distance between lines.
 link-citations: TRUE            # This creates dynamic links to the papers in reference list.
-
-### Adding additional latex packages:
-# header-includes:
-#    - \usepackage{colortbl} # Add additional packages here.
+pagenumber: TRUE
 
 output:
   pdf_document:
@@ -95,16 +92,6 @@ output:
 # abstract: |
 #   The illegal cigarette market has become an increasing problem in South Africa. 
 ---
-
-<!-- First: Set your default preferences for chunk options: -->
-
-<!-- If you want a chunk's code to be printed, set echo = TRUE. message = FALSE stops R printing ugly package loading details in your final paper too. I also suggest setting warning = FALSE and checking for warnings in R, else you might find ugly warnings in your paper. -->
-
-
-
-<!-- ############################## -->
-<!-- # Start Writing here: -->
-<!-- ############################## -->
 
 
 
@@ -164,7 +151,7 @@ ts1 <- ts_plot_log(log_data)
 
 # Methodology \label{Meth}
 
-To check whether the data is stationary, a number of tests is employed. First the autocorrelation functions are plotted below \ref{plot2}. They indicate that all four series are persistent; this is confirmed by the Ljung-Box tests in table \ref{box}. The Ljung-Box test for independence assesses whether there is significant evidence for non-zero correlations at a given lag, with the null hypothesis that there is independence in a given time series. A low p-value indicates a signal of non-stationarity.
+To check whether the data is stationary, a number of tests is employed. First the autocorrelation functions are plotted below \ref{plot2}. They indicate that all four series are persistent; this is confirmed by the Ljung-Box tests in table \ref{box}. The Ljung-Box test for independence assesses whether there is significant evidence for non-zero correlations at a given lag, with the null hypothesis that there is independence in a given time series. A low p-value indicates a signal of non-stationarity. The augmented Dickey Fuller test (\ref {adf}) suggests that all four of the series contain a unit root (using the number of lags as 10^[Some of the series test as stationary when the number of lags is reduced]. This further suggests that the series are non-stationary. 
 
 ![\label{plot2} ACF Plots](img/ACF.png) 
 
@@ -189,7 +176,6 @@ table <- xtable(data, caption = "Ljung-Box Test \\label{box}")
              )
 
 ```
-The augmented Dickey Fuller test suggests that all four of the series contain a unit root (using the number of lags as 10^[Some of the series test as stationary when the number of lags is reduced]. This further suggests that the series are non-stationary. 
 
 ```{r adf, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "\\label{adf}", fig.ext = 'png', fig.height = 5, fig.width = 6}
 
@@ -214,11 +200,6 @@ table <- xtable(data, caption = "Augmented Dickey-Fuller Test \\label{adf}")
 ```
 
 To assess whether a long-run relationship between the variables exists, the Johansen test is employed. According to Akaike's information criterion (AIC), the appropriate maximum number of lags to use is 10 (\ref{lag}). A lag order of 9 is used for the test, since the test requires a lag order of N - 1 = 10 - 1 = 9. Two Johansen tests are used: the Trace and the Maximum Eigenvalue tests. The Trace statistic test (\ref{coint}) shows we reject the null hypothesis that there are zero cointegrating relationships: the test statistic 85.85 is greater than the 1% significance level of 55.43. The test results indicate that there is 1 cointegrating relationship. Similarly, the Maximum Eigenvalue test rejects that there are zero cointegrating relationships, and fails to reject that there is at most 1 cointegrating relationship. The presence of a cointegrating vector amongst the variables suggests a Vector Error Correction Model is appropriate to analyse the variable dynamics.
-
-The results, presented in Appendix 4, show
-that there is one cointegrating vector among the variables. This signies the
-existence of a long-run relationship among the variables that can be combined
-with the short-run dynamics using a Vector Error Correction Model.21;30
 
 ```{r lag, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "", fig.ext = 'png', fig.height = 5, fig.width = 6}
 
@@ -281,8 +262,57 @@ table <- xtable(data1, caption = "Johansen Eigenvalue Test for Cointegration Res
 
 ```
 
+## Vector Error Correction Model 
 
+A summary of the VECM results is given in \ref{vecm1}. The full model output with the 9 lags is given in the appendix
+
+```{r vecm, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Vector Error Correction Model 2OLS\\label{vecm1}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+source("code/VEC.R")
+library(dplyr)
+library(xtable)
+vecresult <- VEC(log_data)
+vecsum <- summary(vecresult) 
+
+vecmatrix1 <- vecsum[[19]] %>% as.data.frame() %>% dplyr::select(1, 2) 
+
+vecmatrix2 <- vecsum[[19]] %>% as.data.frame() %>% dplyr::select(3, 4, 5, 6) 
+rownames(vecmatrix1) <- c("QDP", "PREALWAPDP", "PREALWAPDNP", "YDISPREAL")
+rownames(vecmatrix2) <- c("QDP", "PREALWAPDP", "PREALWAPDNP", "YDISPREAL")
+colnames(vecmatrix2) <- c("QDP-1", "PREALWAPDP-1", "PREALWAPDNP-1", "YDISPREAL-1")
+
+# getting the results of the vecm; pulling out the coefficients and standard errors and forming them into a dataframe (only taking the first 6 columns)
+
+table <- xtable(vecmatrix1, caption = "Vector Error Correction Model 2SLS\\label{vecm1}")
+  print.xtable(table,
+             tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = TRUE
+             )
+  
+table2 <- xtable(vecmatrix2, caption = "Vector Error Correction Model 2SLS\\label{vecm11}")
+  print.xtable(table2,
+             tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = TRUE
+             )
+
+```
+
+## Diagnostic Tests
+
+TO test the accuracy of the model, a number of diagnostic tests were run. The majority of specification tests are modified for a Vector Autoregression model (VAR) so first the results of the VECM were converted to a VAR format.  
 \newpage
+
+# Appendix \label{app}
 
 <!-- # References {-} -->
 

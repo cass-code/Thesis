@@ -315,6 +315,11 @@ Ljung-Box tests in table \ref{box}. The Ljung-Box test for independence
 assesses whether there is significant evidence for non-zero correlations
 at a given lag, with the null hypothesis that there is independence in a
 given time series. A low p-value indicates a signal of non-stationarity.
+The augmented Dickey Fuller test (\ref {adf}) suggests that all four of
+the series contain a unit root (using the number of lags as
+10\footnote{Some of the series test as stationary when the number of
+  lags is reduced}. This further suggests that the series are
+non-stationary.
 
 \begin{figure}
 \centering
@@ -336,11 +341,6 @@ Cigarette Quantity & 0.00 & Reject Null & Non-stationary \\
 \end{tabular}
 \caption{Ljung-Box Test \label{box}} 
 \end{table}
-
-The augmented Dickey Fuller test suggests that all four of the series
-contain a unit root (using the number of lags as 10\footnote{Some of the
-  series test as stationary when the number of lags is reduced}. This
-further suggests that the series are non-stationary.
 
 \begin{table}[H]
 \centering
@@ -368,13 +368,10 @@ cointegrating relationships: the test statistic 85.85 is greater than
 the 1\% significance level of 55.43. The test results indicate that
 there is 1 cointegrating relationship. Similarly, the Maximum Eigenvalue
 test rejects that there are zero cointegrating relationships, and fails
-to reject that there is at most 1 cointegrating relationship. These
-results
-
-The results, presented in Appendix 4, show that there is one
-cointegrating vector among the variables. This signies the existence of
-a long-run relationship among the variables that can be combined with
-the short-run dynamics using a Vector Error Correction Model.21;30
+to reject that there is at most 1 cointegrating relationship. The
+presence of a cointegrating vector amongst the variables suggests a
+Vector Error Correction Model is appropriate to analyse the variable
+dynamics.
 
 \begin{table}[H]
 \centering
@@ -417,15 +414,43 @@ r$<$=3 & 1.21 & 6.50 & 8.18 & 11.65 \\
 \caption{Johansen Eigenvalue Test for Cointegration Results\label{eigen}} 
 \end{table}
 
-\newpage
+A summary of the VECM results is given in \ref{vecm1}. The full model
+output with 9 lags
 
-\hypertarget{references}{%
-\section*{References}\label{references}}
-\addcontentsline{toc}{section}{References}
+\begin{longtable}{rll}
+  \hline
+ & ECT & Intercept \\ 
+  \hline
+QDP & -1.9701(0.5869)**  & 0.0054(0.0238)     \\ 
+  PREALWAPDP & 0.0598(0.0301).   & -0.0022(0.0012).   \\ 
+  PREALWAPDNP & -0.1659(0.1979)     & 0.0100(0.0080)     \\ 
+  YDISPREAL & 0.0078(0.0081)     & 0.0001(0.0003)     \\ 
+   \hline
+\hline
+\caption{Vector Error Correction Model 2SLS\label{vecm1}} 
+\end{longtable}
+\begin{longtable}{rllll}
+  \hline
+ & QDP-1 & PREALWAPDP-1 & PREALWAPDNP-1 & YDISPREAL-1 \\ 
+  \hline
+QDP & 0.7123(0.5286)     & -6.5487(2.6841)*   & 0.5219(0.5503)     & 12.7417(10.2110)     \\ 
+  PREALWAPDP & -0.0565(0.0271)*   & 0.0007(0.1375)     & 0.0567(0.0282)*   & 0.9735(0.5229).   \\ 
+  PREALWAPDNP & 0.1705(0.1783)     & 0.5743(0.9052)     & -0.2648(0.1856)     & -1.8064(3.4435)     \\ 
+  YDISPREAL & -0.0078(0.0073)     & 0.0229(0.0369)     & 0.0093(0.0076)     & 0.8393(0.1406)*** \\ 
+   \hline
+\hline
+\caption{Vector Error Correction Model 2SLS\label{vecm11}} 
+\end{longtable}
 
-\hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
-\end{CSLReferences}
+\hypertarget{diagnostic-tests}{%
+\subsection{Diagnostic Tests}\label{diagnostic-tests}}
+
+TO test the accuracy of the model, a number of diagnostic tests were
+run. \newpage
+
+\hypertarget{appendix}{%
+\section{\texorpdfstring{Appendix
+\label{app}}{Appendix }}\label{appendix}}
 
 \bibliography{Tex/ref}
 
