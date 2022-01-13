@@ -1,88 +1,27 @@
 ---
-# IMPORTANT: Change settings here, but DO NOT change the spacing.
-# Remove comments and add values where applicable.
-# The descriptions below should be self-explanatory
-
 title: "Modelling Tobacco Demand: How the Illicit Cigarette Market Constrains the Legal Market"
 subtitle: "Thesis Draft"
 
 documentclass: "elsarticle"
-
-# --------- Thesis title (Optional - set to FALSE by default).
-# You can move the details below around as you please.
-Thesis_FP: FALSE
-#Entry1: "How the Illicit Cigarette Market Constrains the Legal Market"
-#Entry2: "Thesis Proposal" # textbf for bold
-# Entry3: "A thesis submitted toward the degree of Doctor of Philosophy"
-# Uni_Logo: Tex/Logo.png # Place a logo in the indicated location (from your root, e.g. defaults to ~/Tex/Logo.png) and uncomment this line. Leave uncommented for no image
-# Logo_width: 0.3 # If using a logo - use this to set width (size) of image
-# Entry4: "Under the supervision of: \\vfill Prof. Joe Smith and Dr. Frank Smith"
-# Entry5: "Stellenbosch University"
-# Entry6: April 2020
-# Entry7:
-# Entry8:
-
-# --------- Front Page
-# Comment: ----- Follow this pattern for up to 5 authors
 AddTitle: TRUE # Use FALSE when submitting to peer reviewed platform. This will remove author names.
 Author1: "Cassandra Pengelly"  # First Author - note the thanks message displayed as an italic footnote of first page.
 Ref1: "Stellenbosch University" # First Author's Affiliation
-# Email1: "20346212\\@sun.ac.za" # First Author's Email address
-
-# Author2: "John Smith"
-# Ref2: "Some other Institution, Cape Town, South Africa"
-# Email2: "John\\@gmail.com"
-# CommonAffiliation_12: TRUE # If Author 1 and 2 have a common affiliation. Works with _13, _23, etc.
-
-# Author1: "Cassandra Pengelly^[__Contributions:__  \\newline _The authors would like to thank no institution for money donated to this project. Thank you sincerely._]"  # First Author - note the thanks message displayed as an italic footnote of first page.
-# Ref1: "Prescient Securities, Cape Town, South Africa" # First Author's Affiliation
-# Email1: "nfkatzke\\@gmail.com" # First Author's Email address
-
-CorrespAuthor_1: FALSE  # If corresponding author is author 3, e.g., use CorrespAuthor_3: TRUE
-
-# Comment out below to remove both. JEL Codes only given if keywords also given.
-# keywords: "Multivariate GARCH \\sep Kalman Filter \\sep Copula" # Use \\sep to separate
-# JELCodes: "L250 \\sep L100"
-
-# ----- Manage headers and footers:
-#BottomLFooter: $Title$
-#BottomCFooter:
-#TopLHeader: \leftmark # Adds section name at topleft. Remove comment to add it.
-# BottomRFooter: "\\footnotesize Page \\thepage" # Add a '#' before this line to remove footer.
-# addtoprule: TRUE
-# addfootrule: TRUE               # Use if footers added. Add '#' to remove line.
-
-# --------- page margins:
+CorrespAuthor_1: FALSE  # If corre
+BottomRFooter: "\\footnotesize Page \\thepage" # Add a '#' before this line to 
 margin: 2.3 # Sides
 bottom: 2 # bottom
 top: 2.5 # Top
-HardSet_layout: TRUE # Hard-set the spacing of words in your document. This will stop LaTeX squashing text to fit on pages, e.g.
-# This is done by hard-setting the spacing dimensions. Set to FALSE if you want LaTeX to optimize this for your paper.
-
-# --------- Line numbers
+HardSet_layout: TRUE 
 linenumbers: FALSE # Used when submitting to journal
-
-# ---------- References settings:
-# You can download cls format here: https://www.zotero.org/ - simply search for your institution. You can also edit and save cls formats here: https://editor.citationstyles.org/about/
-# Hit download, store it in Tex/ folder, and change reference below - easy.
 bibliography: Tex/ref.bib       # Do not edit: Keep this naming convention and location.
 csl: Tex/harvard-stellenbosch-university.csl # referencing format used.
-# By default, the bibliography only displays the cited references. If you want to change this, you can comment out one of the following:
-#nocite: '@*' # Add all items in bibliography, whether cited or not
-# nocite: |  # add specific references that aren't cited
-#  @grinold2000
-#  @Someoneelse2010
-
-# ---------- General:
-RemovePreprintSubmittedTo: TRUE  # Removes the 'preprint submitted to...' at bottom of titlepage
-Journal: "Journal of Finance"   # Journal that the paper will be submitting to, if RemovePreprintSubmittedTo is set to TRUE.
+RemovePreprintSubmittedTo: TRUE 
 toc: FALSE                       # Add a table of contents
 numbersections: TRUE             # Should sections (and thus figures and tables) be numbered?
 fontsize: 11pt                  # Set fontsize
 linestretch: 1.2                # Set distance between lines.
 link-citations: TRUE            # This creates dynamic links to the papers in reference list.
 pagenumber: TRUE
-
 output:
   pdf_document:
     keep_tex: TRUE
@@ -93,36 +32,9 @@ output:
 #   The illegal cigarette market has become an increasing problem in South Africa. 
 ---
 
+# Introduction \label{Intro}
 
-
-The main aim of the study is to investigate the relationship between the legal and illegal tobacco market in South Africa. The study intends to:
-
-* Define the legal and illegal tobacco market
-
-* Model tobacco demand
-
-* Estimate price elasticities
-
-* Understand whether the illegal tobacco market constrains the legal market
-
-
-
-
-According to @FATF[p. 7], the definition of illicit trading of tobacco products is: “…the supply, distribution and sale of smuggled genuine, counterfeit, or cheap white tobacco products…” where smuggling is conducted to avoid excise taxes, and/or to evade rules prohibiting the sale of such goods. As @Saenz acknowledge, one of the difficulties in investigating and modelling tobacco is deciding how to measure illicit trade, given the limits on the availability of data. These authors suggest that researchers studying illicit trade should cross-validate their estimates using different methods. 
-
-This paper will measure the illicit market by two different methods. The first method defines the illicit market by price: if a pack of cigarettes is sold for less than the sum of the excise duty and VAT, then it follows that it has been sold illegally. The logic being that there is no economic incentive to sell packs at a loss, which suggests that if a pack is being sold at less than its tax amount, tax is not being paid on the cigarettes and they are thus illegal. The second method defines the illicit market by volume: the illegal market is the difference between the tax that should be paid on the total cigarette packs produced and sold, and the actual tax paid.
-
-Following a similar approach as @Bos[p.9], a vector autoregression will be used to estimate the long run elasticities of cigarette consumption. The proposed base model is described by \ref{eq1}  
-
-\begin{align}
- Q_t = \mu + \sum_{i = 1}^{n}\beta_iQ_{t-i} +\sum_{i = 1}^{n}\gamma_iP_{t-i} + \sum_{i = 1}^{n}\theta_iY_{t-i} + \sum_{i = 1}^{n}\phi_iI_{t-i} \label{eq1}
-\end{align}
-
-where $Q_t$ is the log of cigarette consumption,\newline
-$P_{t}$ is the log of real cigarette price,\newline
-$Y_{t}$ is the log of real disposable income,\newline
-$I_{t}$ is the log of real illicit cigarette price,\newline
-$n$ is the number of lags and t is measured in months
+This thesis draft lays out the method and model used to study the relationship between the legal and illegal tobacco market in South Africa. Section \ref{dat} discusses the data used and how it was cleaned. Section \ref{Meth} explains the methodology, where a VECM and a Var model are presented. The appendix \ref{app} contains the full model outputs. 
 
 # Data \label{dat}
 
@@ -147,7 +59,6 @@ The figure below \ref{plot1} plots the time series of the logged variables. The 
 source("code/ts_plot_log.R")
 ts1 <- ts_plot_log(log_data)
 ```
-
 
 # Methodology \label{Meth}
 
@@ -264,7 +175,7 @@ table <- xtable(data1, caption = "Johansen Eigenvalue Test for Cointegration Res
 
 ## Vector Error Correction Model 
 
-A summary of the VECM results is given in \ref{vecm1}. The full model output with the 9 lags is given in the appendix
+A summary of the VECM results is given in \ref{vecm1}. The full model output with the 9 lags is given in the appendix \ref{app}. The results show that the error correction terms are not significant, with the exception of the cigarette quantity term, and very few of the first lag coefficients are significant.
 
 ```{r vecm, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Vector Error Correction Model 2OLS\\label{vecm1}", fig.ext = 'png', fig.height = 5, fig.width = 6}
 
@@ -283,7 +194,7 @@ colnames(vecmatrix2) <- c("QDP-1", "PREALWAPDP-1", "PREALWAPDNP-1", "YDISPREAL-1
 
 # getting the results of the vecm; pulling out the coefficients and standard errors and forming them into a dataframe (only taking the first 6 columns)
 
-table <- xtable(vecmatrix1, caption = "Vector Error Correction Model 2SLS\\label{vecm1}")
+table <- xtable(vecmatrix1, caption = "Vector Error Correction Model 2OLS\\label{vecm1}")
   print.xtable(table,
              tabular.environment = "longtable",
              floating = TRUE,
@@ -294,7 +205,7 @@ table <- xtable(vecmatrix1, caption = "Vector Error Correction Model 2SLS\\label
              include.rownames = TRUE
              )
   
-table2 <- xtable(vecmatrix2, caption = "Vector Error Correction Model 2SLS\\label{vecm11}")
+table2 <- xtable(vecmatrix2, caption = "Vector Error Correction Model 2OLS\\label{vecm11}")
   print.xtable(table2,
              tabular.environment = "longtable",
              floating = TRUE,
@@ -307,13 +218,168 @@ table2 <- xtable(vecmatrix2, caption = "Vector Error Correction Model 2SLS\\labe
 
 ```
 
-## Diagnostic Tests
+To test the accuracy of the model, a number of diagnostic tests were run. The majority of specification tests are modified for a Vector Autoregression model (VAR) so first the results of the VECM were converted to a VAR format. The Portmanteau serial correlation test shows that the null hypothesis of no autocorrelation is rejected at a 1% level of significance since the p-value is 0. The ARCH test shows that there are no ARCH effects (the test fails to reject the null). Finally, the normality test indicates the the residuals of the VECM model are not normally distributed. The serial correlation and normality test indicate that the model could be better specified. The next section explores an unstructured VAR model as an alternative.
 
-TO test the accuracy of the model, a number of diagnostic tests were run. The majority of specification tests are modified for a Vector Autoregression model (VAR) so first the results of the VECM were converted to a VAR format.  
+```{r diagnostics, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Diagnostic Test Results\\label{diagnostic}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+library(xtable)
+library(tidyverse)
+source("code/diagnostic.R")
+source("code/ARCH.R")
+source("code/Norm.R")
+
+serial <- diagnostic(log_data)
+data <- serial %>% tibble::as_tibble()
+
+table <- xtable(data, caption = "Serial Correlcation Test \\label{diag}")
+  print.xtable(table,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+  
+arch <- ARCH(log_data)
+data1 <- arch %>% tibble::as_tibble()
+table1 <- xtable(data1, caption = "ARCH Tests \\label{archh}")
+  print.xtable(table1,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+ 
+norm <- Norm(log_data)
+data2 <- norm %>% tibble::as_tibble()
+table2 <- xtable(data2, caption = "ARCH Tests \\label{archh}")
+  print.xtable(table2,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+
+```
+
+## Unstructured VAR
+If we proceed with using an unstructured VAR model despite the non-stationarity of the time series, we get the base model below (\ref{eq1}):  
+
+\begin{align}
+ Q_t = \mu + \sum_{i = 1}^{n}\beta_iQ_{t-i} +\sum_{i = 1}^{n}\gamma_iP_{t-i} + \sum_{i = 1}^{n}\theta_iY_{t-i} + \sum_{i = 1}^{n}\phi_iI_{t-i} \label{eq1}
+\end{align}
+
+where $Q_t$ is the log of cigarette consumption,\newline
+$P_{t}$ is the log of real cigarette price,\newline
+$Y_{t}$ is the log of real disposable income,\newline
+$I_{t}$ is the log of real illicit cigarette price,\newline
+$n$ is the number of lags and t is measured in months
+
+The results of the VAR are presented in table \ref{varr} below.
 \newpage
+```{r var, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Vector Error Correction Model 2OLS\\label{varr}", fig.ext = 'png', fig.height = 6, fig.width = 6}
+source("code/VARS.R")
+library(huxtable)
+model <- VARS(log_data)
 
+stargazer(model, header=FALSE, type = 'latex', single.row=TRUE, column.sep.width = "1pt", font.size= "footnotesize", no.space = TRUE, caption = "Vector Autoregression \\label{varr}")
+
+# Title <- "VAR Out"
+# Label <- "Reg01"
+# htab <-
+# huxreg(model, 
+#                 statistics = c(N = "nobs", R2 = "r.squared"),
+#                 note = "%stars%.") %>% 
+#   set_caption(Title) %>%
+#   set_label(Label)
+# htab
+
+```
+
+```{r diagnostics1, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Diagnostic Test Results\\label{diagnostic}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+library(xtable)
+library(tidyverse)
+source("code/diagnostic.R")
+source("code/ARCH.R")
+source("code/Norm.R")
+
+serial <- diagnostic(log_data)
+data <- serial %>% tibble::as_tibble()
+
+table <- xtable(data, caption = "Serial Correlcation Test \\label{diag}")
+  print.xtable(table,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+  
+arch <- ARCH(log_data)
+data1 <- arch %>% tibble::as_tibble()
+table1 <- xtable(data1, caption = "ARCH Tests \\label{archh}")
+  print.xtable(table1,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+ 
+norm <- Norm(log_data)
+data2 <- norm %>% tibble::as_tibble()
+table2 <- xtable(data2, caption = "ARCH Tests \\label{archh}")
+  print.xtable(table2,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE
+             )
+
+```
+
+\newpage
 # Appendix \label{app}
 
+The full model output for the VECM is given below (for all 9 lags):
+```{r vecmapp, results='asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Vector Error Correction Model 2OLS\\label{vecmapp}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+source("code/VEC.R")
+library(dplyr)
+library(kableExtra)
+
+vecresult <- VEC(log_data)
+vecsum <- summary(vecresult) 
+vecmatrix4 <- vecsum[[19]] %>% as.data.frame()
+```
+
+```{css, echo=FALSE}
+.scroll-100 {
+  max-height: 100px;
+  overflow-y: auto;
+  background-color: inherit;
+}
+```
+
+```{r, class.output="scroll-100", echo=FALSE}
+print(vecmatrix4)
+```
 <!-- # References {-} -->
 
 <!-- <div id="refs"></div> -->

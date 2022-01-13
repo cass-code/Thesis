@@ -1,4 +1,4 @@
-VAR <- function(log_data, maxlag){
+VARS <- function(log_data, maxlag){
 
 # Setting up Var
 
@@ -24,14 +24,14 @@ log_YDISPREAL <- ts(log_data$log_YDISPREAL, start=c(2012, 1), end=c(2020, 3), fr
 # Finding the optimal number of lags
 bind <- cbind(log_QDP,log_PREALWAPDP, log_PREALWAPDNP, log_YDISPREAL)
 colnames(bind) <- cbind("Quantity", "Price Duties Paid", "Price Duties not Paid", "Disposable Income")
-lagselect <- VARselect(bind, lag.max = 10, type = "both")
-lagselect$selection
+# lagselect <- VARselect(bind, lag.max = 10, type = "both")
+# lagselect$selection
 
-model <- VAR(bind, p = 9, type = "none", season = NULL, exogen = NULL)
-summary(model)
-mod <- stargazer(model[["varresult"]], type = 'text')
-mod
+model <- vars::VAR(bind, p = 9, type = 'const', season = NULL, exogen = NULL)
+# mod <- summary(model)
+# mod <- stargazer(model[["varresult"]], type = 'text')
+# mod
 
-
-# roots(model, modulus=TRUE)
+m <- model[[1]]
+m
 }

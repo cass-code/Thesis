@@ -18,31 +18,4 @@ VEC <- function(log_data){
     vecm <- VECM(datavec, 9, r=1, estim=("2OLS"))
 
     vecm
-    # summary(vecm)
-    # aa <- coefA(vecm)
-    # aa
-    #
-    # bb <- coefB(vecm)
-    # bb
-    #
-    # cc <- coefPI(vecm)
-    # cc
-    # sum <- summary(vecm)
-    # sum
-
-   #  vecm[[2]]
-   #  vecm[[6]]
-   #  vecm[2]
-   #
-   # kk <-  data.frame(sum[["bigcoefficients"]], sum[["starslegend"]] )
-   #
-   # trns <-
-   #
-   #  sum <- summary(vecm)
-   #  r <- data.frame(sum[["qr"]])
-   #
-   #  str(sum)
-   # k<-  data.frame(vecm[[2]])
-   # k
-    # stargazer("sum", type="text")
 }
