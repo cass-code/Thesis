@@ -243,8 +243,8 @@ This thesis draft lays out the method and model used to study the
 relationship between the legal and illegal tobacco market in South
 Africa. Section \ref{dat} discusses the data used and how it was
 cleaned. Section \ref{Meth} explains the methodology, where a VECM and a
-Var model are presented. The appendix \ref{app} contains the full model
-outputs.
+VAR model are presented. The final section details discussion points
+(\ref{discuss}). The appendix \ref{app} contains the full model outputs.
 
 \hypertarget{data}{%
 \section{\texorpdfstring{Data \label{dat}}{Data }}\label{data}}
@@ -465,7 +465,7 @@ Test & p value & Test Result & Interpretation \\
 Normality & 0.00 & Reject Null & Residuals not normally distributed \\ 
    \hline
 \end{tabular}
-\caption{ARCH Tests \label{archh}} 
+\caption{Normality Tests \label{archh}} 
 \end{table}
 
 \hypertarget{unstructured-var}{%
@@ -485,11 +485,16 @@ disposable income,\newline \(I_{t}\) is the log of real illicit
 cigarette price,\newline \(n\) is the number of lags and t is measured
 in months
 
-The results of the VAR are presented in table \ref{varr} below. \newpage
+The results of the VAR are presented in table \ref{varr} below. The
+diagnostic tests are summarised in the tables under the regression
+output in \ref{diagvar}. The VAR fairs better in the specification
+tests, although there is stil serial correlation present.
+
+\newpage
 
 \begin{table}[!htbp] \centering 
-  \caption{} 
-  \label{Vector Autoregression \label{varr}} 
+  \caption{Vector Autoregression \label{varr}} 
+  \label{} 
 \footnotesize 
 \begin{tabular}{@{\extracolsep{1pt}}lcccc} 
 \\[-1.8ex]\hline 
@@ -557,7 +562,7 @@ Test & p value & Test Result & Interpretation \\
 Portmanteau & 0.00 & Reject Null & Autorrelation \\ 
    \hline
 \end{tabular}
-\caption{Serial Correlcation Test \label{diag}} 
+\caption{Serial Correlcation Test \label{diagvar}} 
 \end{table}
 \begin{table}[H]
 \centering
@@ -576,17 +581,63 @@ ARCH & 1.00 & Fail to reject Null & No ARCH effects \\
   \hline
 Test & p value & Test Result & Interpretation \\ 
   \hline
-Normality & 0.00 & Reject Null & Residuals not normally distributed \\ 
+Normality & 0.09 & Fail to reject Null & Residuals normally distributed \\ 
    \hline
 \end{tabular}
-\caption{ARCH Tests \label{archh}} 
+\caption{Normality Tests \label{archhvar}} 
 \end{table}
+
+The results of the VAR are then used to calculate elasticities according
+to the formula below:
+
+\begin{equation}
+\hat{E}_{d}=\frac{\sum_{t=1}^{9} \hat{\gamma}_{t}}{1-\sum_{t=1}^{9} \hat{\beta}_{t}}
+\end{equation}
+
+The elasticities are presented in the table below \ref{elastic}. The
+income elasticity is expected to be positive; however, it is unusual
+that both price elasticities are positive.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lr}
+  \hline
+  \hline
+Illicit price elasticity of cigarette demand & 0.27 \\ 
+  Income elasticity & 0.26 \\ 
+  Price elasticity & 0.21 \\ 
+   \hline
+\end{tabular}
+\caption{Elasticities \label{elastic}} 
+\end{table}
+
+\hypertarget{discussion-points}{%
+\section{\texorpdfstring{Discussion Points
+\label{discuss}}{Discussion Points }}\label{discussion-points}}
+
+There are several concerns that I have regarding the data work:
+
+\begin{itemize}
+\item
+  How do I choose the appropriate maximum number of lags for the
+  stationarity tests? Changing the max lags impacted the optimal lag
+  selection results, which then changed some results from nonstationary
+  to stationary.
+\item
+  If some of the time series are stationary and some are nonstationary,
+  should I use a VECM or a VAR?
+\item
+  How do I interperet the coefficients of the VAR (and VECM) for the
+  elasticities? I think this is where I am going wrong in my final
+  calculations.
+\end{itemize}
 
 \newpage
 
 \hypertarget{appendix}{%
-\section{\texorpdfstring{Appendix
+\section*{\texorpdfstring{Appendix
 \label{app}}{Appendix }}\label{appendix}}
+\addcontentsline{toc}{section}{Appendix \label{app}}
 
 The full model output for the VECM is given below (for all 9 lags):
 

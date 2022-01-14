@@ -1,8 +1,5 @@
-Quant <- function(log_data){
-  
-  # Setting up Var
-  
-  # loading required packages
+PDNP <- function(log_data){
+
   library(tsm)
   library(urca)
   library(vars)
@@ -10,8 +7,7 @@ Quant <- function(log_data){
   library(tidyverse)
   library(dplyr)
   library(astsa)
-  
-  # creating time series objects
+
   log_QDP <- ts(log_data$log_QDP, start=c(2012, 1), end=c(2020, 3), frequency=12)
   log_PREALWAPDP <- ts(log_data$log_PREALWAPDP, start=c(2012, 1), end=c(2020, 3), frequency=12)
   log_PREALWAPDNP <- ts(log_data$log_PREALWAPDNP, start=c(2012, 1), end=c(2020, 3), frequency=12)
@@ -21,12 +17,12 @@ Quant <- function(log_data){
 
   model <- vars::VAR(bind, p = 9, type = 'const', season = NULL, exogen = NULL)
   m <- model[[1]]
-  quantity <- m[[1]] 
-  quantity1 <- quantity[[1]] %>% as.data.frame() 
-  colnames(quantity1) <- c("Coefficient")
-  
-  quantity1$type <- rownames(quantity1)
-  quant2<- dplyr::filter(quantity1, grepl('Quantity', type))
-  quant2
+  PDNP <- m[[3]]
+  PDNP1 <- PDNP[[1]] %>% as.data.frame()
+  colnames(PDNP1) <- c("Coefficient")
+
+  PDNP1$type <- rownames(PDNP1)
+  PDNP2<- dplyr::filter(PDNP1, grepl("Price.Duties.not.Paid", type))
+  PDNP2
 
 }

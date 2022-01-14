@@ -34,7 +34,7 @@ output:
 
 # Introduction \label{Intro}
 
-This thesis draft lays out the method and model used to study the relationship between the legal and illegal tobacco market in South Africa. Section \ref{dat} discusses the data used and how it was cleaned. Section \ref{Meth} explains the methodology, where a VECM and a Var model are presented. The appendix \ref{app} contains the full model outputs. 
+This thesis draft lays out the method and model used to study the relationship between the legal and illegal tobacco market in South Africa. Section \ref{dat} discusses the data used and how it was cleaned. Section \ref{Meth} explains the methodology, where a VECM and a VAR model are presented. The final section details discussion points (\ref{discuss}). The appendix \ref{app} contains the full model outputs. 
 
 # Data \label{dat}
 
@@ -257,7 +257,7 @@ table1 <- xtable(data1, caption = "ARCH Tests \\label{archh}")
  
 norm <- Norm(log_data)
 data2 <- norm %>% tibble::as_tibble()
-table2 <- xtable(data2, caption = "ARCH Tests \\label{archh}")
+table2 <- xtable(data2, caption = "Normality Tests \\label{archh}")
   print.xtable(table2,
              # tabular.environment = "longtable",
              floating = TRUE,
@@ -283,39 +283,29 @@ $Y_{t}$ is the log of real disposable income,\newline
 $I_{t}$ is the log of real illicit cigarette price,\newline
 $n$ is the number of lags and t is measured in months
 
-The results of the VAR are presented in table \ref{varr} below.
+The results of the VAR are presented in table \ref{varr} below. The diagnostic tests are summarised in the tables under the regression output in \ref{diagvar}. The VAR fairs better in the specification tests, although there is stil serial correlation present.
+
 \newpage
 ```{r var, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Vector Error Correction Model 2OLS\\label{varr}", fig.ext = 'png', fig.height = 6, fig.width = 6}
 source("code/VARS.R")
 library(huxtable)
 model <- VARS(log_data)
 
-stargazer(model, header=FALSE, type = 'latex', single.row=TRUE, column.sep.width = "1pt", font.size= "footnotesize", no.space = TRUE, caption = "Vector Autoregression \\label{varr}")
-
-# Title <- "VAR Out"
-# Label <- "Reg01"
-# htab <-
-# huxreg(model, 
-#                 statistics = c(N = "nobs", R2 = "r.squared"),
-#                 note = "%stars%.") %>% 
-#   set_caption(Title) %>%
-#   set_label(Label)
-# htab
-
+stargazer(model, header=FALSE, type = 'latex', single.row=TRUE, column.sep.width = "1pt", font.size= "footnotesize", no.space = TRUE, title = "Vector Autoregression \\label{varr}")
 ```
 
 ```{r diagnostics1, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Diagnostic Test Results\\label{diagnostic}", fig.ext = 'png', fig.height = 5, fig.width = 6}
 
 library(xtable)
 library(tidyverse)
-source("code/diagnostic.R")
-source("code/ARCH.R")
-source("code/Norm.R")
+source("code/diagvar.R")
+source("code/ARCHvar.R")
+source("code/Normvar.R")
 
-serial <- diagnostic(log_data)
+serial <- diagvar(log_data)
 data <- serial %>% tibble::as_tibble()
 
-table <- xtable(data, caption = "Serial Correlcation Test \\label{diag}")
+table <- xtable(data, caption = "Serial Correlcation Test \\label{diagvar}")
   print.xtable(table,
              # tabular.environment = "longtable",
              floating = TRUE,
@@ -326,7 +316,7 @@ table <- xtable(data, caption = "Serial Correlcation Test \\label{diag}")
              include.rownames = FALSE
              )
   
-arch <- ARCH(log_data)
+arch <- ARCHvar(log_data)
 data1 <- arch %>% tibble::as_tibble()
 table1 <- xtable(data1, caption = "ARCH Tests \\label{archh}")
   print.xtable(table1,
@@ -339,9 +329,9 @@ table1 <- xtable(data1, caption = "ARCH Tests \\label{archh}")
              include.rownames = FALSE
              )
  
-norm <- Norm(log_data)
+norm <- Normvar(log_data)
 data2 <- norm %>% tibble::as_tibble()
-table2 <- xtable(data2, caption = "ARCH Tests \\label{archh}")
+table2 <- xtable(data2, caption = "Normality Tests \\label{archhvar}")
   print.xtable(table2,
              # tabular.environment = "longtable",
              floating = TRUE,
@@ -354,8 +344,67 @@ table2 <- xtable(data2, caption = "ARCH Tests \\label{archh}")
 
 ```
 
+The results of the VAR are then used to calculate elasticities according to the formula below:
+
+\begin{equation}
+\hat{E}_{d}=\frac{\sum_{t=1}^{9} \hat{\gamma}_{t}}{1-\sum_{t=1}^{9} \hat{\beta}_{t}}
+\end{equation}
+
+The elasticities are presented in the table below \ref{elastic}. The income elasticity is expected to be positive; however, it is unusual that both price elasticities are positive. 
+
+```{r elasticity, results = 'asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
+library(xtable)
+library(tidyverse)
+source("code/Quant.R")
+source("code/PDP.R")
+source("code/PDNP.R")
+source("code/YDIS.R")
+
+quantitydf<- Quant(log_data)
+  quantsum <- sum(quantitydf$Coefficient) %>% as.numeric()
+  
+  quantsum1 <- 1 - (quantsum)
+PDPdf<- PDP(log_data)
+  pdpsum <- sum(PDPdf$Coefficient) %>% as.numeric()
+PDNPdf<- PDNP(log_data)
+  pdNpsum <- sum(PDNPdf$Coefficient) %>% as.numeric()
+ydf<- YDIS(log_data)
+  ysum <- sum(ydf$Coefficient) %>% as.numeric()
+
+# Create table
+a <- c("Illicit price elasticity of cigarette demand", "Income elasticity", "Price elasticity")
+b <- c(pdNpsum/quantsum1, ysum/quantsum1, pdpsum/quantsum1)
+dfinal <- data.frame(a,b)
+elas <- dfinal %>% tibble::as_tibble()
+
+table <- xtable(elas, caption = "Elasticities \\label{elastic}")
+  print.xtable(table,
+             # tabular.environment = "longtable",
+             floating = TRUE,
+             table.placement = 'H',
+             # scalebox = 0.3,
+             comment = FALSE,
+             caption.placement = 'bottom',
+             include.rownames = FALSE,
+             include.colnames = FALSE
+             )
+
+```
+
+# Discussion Points \label{discuss}
+
+There are several concerns that I have regarding the data work:
+
+* How do I choose the appropriate maximum number of lags for the stationarity tests? Changing the max lags impacted the optimal lag selection results, which then changed some results from nonstationary to stationary.
+
+* If some of the time series are stationary and some are nonstationary, should I use a VECM or a VAR?
+
+* How do I interperet the coefficients of the VAR (and VECM) for the elasticities? I think this is where I am going wrong in my final calculations.
+
 \newpage
-# Appendix \label{app}
+
+# Appendix \label{app} {-}
 
 The full model output for the VECM is given below (for all 9 lags):
 ```{r vecmapp, results='asis', echo=FALSE, warning =  FALSE, message=FALSE, fig.align = 'center', fig.cap = "Vector Error Correction Model 2OLS\\label{vecmapp}", fig.ext = 'png', fig.height = 5, fig.width = 6}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.13)  13 JAN 2022 18:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.13)  14 JAN 2022 05:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -604,6 +604,9 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 
 LaTeX Warning: Label `archh' multiply defined.
 
+
+LaTeX Warning: Label `archh' multiply defined.
+
 )
 \openout1 = `Thesis_Draft.aux'.
 
@@ -724,10 +727,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 213.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 213.
-
-LaTeX Warning: Reference `app' on page 1 undefined on input line 246.
-
-<Thesis_Draft_files/figure-latex/Figure2-1.png, id=28, 433.62pt x 361.35pt>
+<Thesis_Draft_files/figure-latex/Figure2-1.png, id=38, 433.62pt x 361.35pt>
 File: Thesis_Draft_files/figure-latex/Figure2-1.png Graphic file (type png)
 <use Thesis_Draft_files/figure-latex/Figure2-1.png>
 Package pdftex.def Info: Thesis_Draft_files/figure-latex/Figure2-1.png  used on input line 273.
@@ -736,7 +736,7 @@ Package pdftex.def Info: Thesis_Draft_files/figure-latex/Figure2-1.png  used on 
 
 
 {c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<img/ACF.png, id=49, 475.02469pt x 368.1253pt>
+<img/ACF.png, id=59, 475.02469pt x 368.1253pt>
 File: img/ACF.png Graphic file (type png)
 <use img/ACF.png>
 Package pdftex.def Info: img/ACF.png  used on input line 299.
@@ -758,9 +758,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3 <./img/ACF.png>]
 
-LaTeX Warning: Reference `app' on page 4 undefined on input line 395.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -781,7 +778,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [5]
 
-LaTeX Warning: Reference `varr' on page 6 undefined on input line 488.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6]
+Overfull \vbox (41.23994pt too high) has occurred while \output is active []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -790,19 +794,71 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[6]
-! Argument of \caption@@@withoptargs has an extra }.
-<inserted text> 
-                \par 
-l.492   \label{Vector Autoregression \label{varr}}
-                                                   
-Here is how much of TeX's memory you used:
- 17696 strings out of 480246
- 323570 string characters out of 5894123
- 592716 words of memory out of 5000000
- 35299 multiletter control sequences out of 15000+600000
- 521008 words of font info for 66 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 70i,11n,76p,277b,758s stack positions out of 5000i,500n,10000p,200000b,80000s
+[7]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 622.
+(c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
-!  ==> Fatal error occurred, no output PDF file produced!
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[11]
+No file Thesis_Draft.bbl.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12] (./Thesis_Draft.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `Thesis_Draft.out' has not changed.
+(rerunfilecheck)             Checksum: 03A0F2B8205A6C991FBF9FEEF244DCFE;871.
+ ) 
+Here is how much of TeX's memory you used:
+ 17761 strings out of 480246
+ 324849 string characters out of 5894123
+ 608232 words of memory out of 5000000
+ 35340 multiletter control sequences out of 15000+600000
+ 521692 words of font info for 68 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 70i,11n,76p,277b,902s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy9.pfb><c:/Users/Cassandra/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on Thesis_Draft.pdf (12 pages, 299876 bytes).
+PDF statistics:
+ 262 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 67 words of extra memory for PDF output out of 10000 (max. 10000000)
+
